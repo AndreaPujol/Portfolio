@@ -157,6 +157,46 @@ const projectData = [
             secondary: 'Inter',
             description: 'Friendly y energética para motivar el entrenamiento'
         }
+    },
+    {
+        id: 'manimal',
+        category: 'Diseño Gráfico',
+        title: 'Creación de logo',
+        subtitle: 'Identidad Visual y Diseño de Marca',
+        imageUrl: 'img/Presentacion.jpg',
+        intro: 'Diseño de logo completo para una aplicación de fitness que personaliza rutinas de entrenamiento basándose en objetivos individuales, nivel de experiencia y disponibilidad de tiempo del usuario.',
+        challenge: 'Crear una experiencia que motive a usuarios de diferentes niveles a mantener consistencia en sus entrenamientos, simplificando la complejidad de la planificación fitness.',
+        solution: 'Desarrollé una interfaz intuitiva con gamificación sutil, onboarding personalizado y sistema de progreso visual que mantiene a los usuarios motivados y comprometidos con sus objetivos.',
+        process: [
+            'Research de usuarios y análisis de competencia',
+            'Definición de user personas y journey maps',
+            'Wireframing y arquitectura de información',
+            'Prototipado interactivo en Figma',
+            'Testing de usabilidad con usuarios reales',
+            'Iteración basada en feedback y métricas'
+        ],
+        tools: ['Figma', 'Adobe XD', 'Principle', 'InVision'],
+        duration: '12 semanas',
+        team: 'Andrea Pujol (UX/UI Lead), Product Manager, 2 Developers, UX Researcher',
+        results: [
+            'Tasa de retención del 78% en el primer mes',
+            'Puntuación de 4.7/5 en tiendas de aplicaciones',
+            'Incremento del 85% en completación de entrenamientos'
+        ],
+        userFlowUrl: 'https://placehold.co/800x450/118AB2/FFFFFF?text=User+Flow+%26+Journey',
+        wireframesUrl: 'https://placehold.co/800x450/F0F8FF/118AB2?text=Wireframes+%26+Prototipos',
+        uiScreensUrl: 'https://placehold.co/800x450/1E3A8A/FFFFFF?text=Pantallas+Finales',
+        usabilityUrl: 'https://placehold.co/800x450/06D6A0/FFFFFF?text=Testing+%26+Resultados',
+        colors: {
+            labels: ['Azul Energía', 'Verde Progreso', 'Naranja Motivación', 'Gris Interface'],
+            cmyk: ['C:80 M:30 Y:0 K:0', 'C:60 M:0 Y:80 K:0', 'C:0 M:60 Y:100 K:0', 'C:0 M:0 Y:0 K:40'],
+            hex: ['#118AB2', '#06D6A0', '#FFD166', '#9CA3AF']
+        },
+        typography: { 
+            primary: 'Nunito', 
+            secondary: 'Inter',
+            description: 'Friendly y energética para motivar el entrenamiento'
+        }
     }
 ];
 

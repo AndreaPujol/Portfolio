@@ -748,6 +748,17 @@ h2, h3, h4, h5, h6 {
 .bg-gradient-support { background: var(--gradient-support); }
 .bg-gradient-full { background: var(--gradient-full); }
 
+/* Fondo con paleta para sección Trabajamos Juntos */
+.bg-contact-primary {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+}
+.bg-contact-support {
+  background: linear-gradient(135deg, var(--color-support-yellow), var(--color-support-pink));
+}
+.bg-contact-full {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary), var(--color-support-yellow), var(--color-support-pink));
+}
+
 /* Hover states */
 .hover\:text-primary:hover { color: var(--color-primary); }
 .hover\:text-secondary:hover { color: var(--color-secondary); }
