@@ -1,0 +1,702 @@
+/* Importar fuentes de Google */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Playfair+Display:wght@700&display=swap');
+
+/* Variables CSS para colores del tema */
+:root {
+    --primary-dark: #073B4C;
+    --primary-blue: #118AB2;
+    --accent-green: #06D6A0;
+    --accent-yellow: #FFD166;
+    --background-light: #F7F9FB;
+    --white: #ffffff;
+    --gray-100: #f3f4f6;
+    --gray-200: #e5e7eb;
+    --gray-400: #9ca3af;
+    --gray-600: #4b5563;
+    --gray-700: #374151;
+    --gray-800: #1f2937;
+}
+
+/* Estilos base */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--background-light);
+    color: var(--primary-dark);
+    line-height: 1.6;
+}
+
+.font-display {
+    font-family: 'Playfair Display', serif;
+}
+
+/* Componentes de tarjetas */
+.card {
+    background-color: #ffffff !important;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 10px 10px -5px rgb(0 0 0 / 0.04);
+}
+
+/* Efecto de hover para imágenes de proyectos */
+.project-image {
+    transition: transform 0.3s ease;
+    overflow: hidden;
+}
+
+.card:hover .project-image img {
+    transform: scale(1.05);
+}
+
+/* Contenedor de gráficos */
+.chart-container {
+    position: relative;
+    height: 250px;
+    width: 100%;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 400px;
+}
+
+@media (min-width: 768px) {
+    .chart-container {
+        height: 300px;
+    }
+}
+
+/* Navegación sticky mejorada */
+.nav-sticky {
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Botones de filtro mejorados */
+.filter-btn {
+    position: relative;
+    overflow: hidden;
+    transform: perspective(1px) translateZ(0);
+}
+
+.filter-btn::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, var(--primary-blue), var(--accent-green));
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    transition: transform 0.3s ease-out;
+}
+
+.filter-btn:hover::before {
+    transform: scaleX(1);
+}
+
+.filter-btn.active {
+    background: linear-gradient(45deg, var(--primary-dark), var(--primary-blue));
+    color: white;
+}
+
+/* Modal mejorado */
+.modal-overlay {
+    backdrop-filter: blur(8px);
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    max-height: 90vh;
+    border-radius: 1rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* Animaciones para las secciones */
+.section-fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.section-fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Efectos de hover para enlaces */
+.link-hover {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.link-hover::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background: linear-gradient(90deg, var(--primary-blue), var(--accent-green));
+    transition: width 0.3s ease;
+}
+
+.link-hover:hover::after {
+    width: 100%;
+}
+
+/* Mejoras para las estadísticas */
+.stat-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Gradientes para los números de estadísticas */
+.stat-number {
+    background: linear-gradient(135deg, var(--primary-blue), var(--accent-green));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Estilos para el contenido del modal de proyectos */
+.project-section {
+    background: linear-gradient(135deg, rgba(247, 249, 251, 0.9), rgba(255, 255, 255, 0.8));
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid var(--primary-blue);
+}
+
+.project-image-gallery img {
+    border-radius: 0.5rem;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.project-image-gallery img:hover {
+    transform: scale(1.02);
+}
+
+/* Badges de categoría */
+.category-badge {
+    background: linear-gradient(45deg, var(--primary-blue), var(--accent-green));
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    display: inline-block;
+}
+
+/* Estilos para botones de certificados */
+.certificate-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: linear-gradient(135deg, var(--primary-blue), var(--accent-green));
+    color: white;
+    font-size: 0.875rem;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.certificate-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(17, 138, 178, 0.3);
+    background: linear-gradient(135deg, var(--accent-green), var(--primary-blue));
+}
+
+.certificate-btn:active {
+    transform: translateY(0);
+}
+
+.certificate-btn:disabled,
+.certificate-btn.opacity-50 {
+    background: linear-gradient(135deg, var(--gray-400), var(--gray-600));
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.certificate-btn:disabled:hover,
+.certificate-btn.opacity-50:hover {
+    transform: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.certificate-btn svg {
+    width: 1rem;
+    height: 1rem;
+    flex-shrink: 0;
+}
+
+/* Loading spinner */
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid var(--gray-200);
+    border-top: 4px solid var(--primary-blue);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+    .modal-content {
+        margin: 1rem;
+        max-height: 95vh;
+    }
+    
+    .project-section {
+        padding: 1rem;
+    }
+}
+
+/* ========================================
+   RESPONSIVE DESIGN IMPROVEMENTS
+   ======================================== */
+
+/* Mejoras generales responsive */
+@media (max-width: 1024px) {
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    /* Ajustar tamaños de texto en tablets */
+    .font-display {
+        font-size: 2.5rem;
+        line-height: 1.2;
+    }
+    
+    /* Reducir padding de secciones */
+    section {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+}
+
+/* Mejoras para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+    /* Navegación móvil mejorada */
+    .nav-sticky {
+        backdrop-filter: blur(8px);
+        padding: 0.75rem 0;
+    }
+    
+    /* Hero section responsive */
+    .hero-section h1 {
+        font-size: 2rem;
+        line-height: 1.1;
+        margin-bottom: 1rem;
+    }
+    
+    .hero-section p {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+    
+    /* Botones responsive */
+    .btn-primary, .btn-secondary {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+        width: 100%;
+        margin-bottom: 0.5rem;
+        text-align: center;
+    }
+    
+    /* Grid responsive para tarjetas */
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    /* Proyectos responsive */
+    .project-gallery {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    /* Modal responsive */
+    .modal-content {
+        margin: 0.5rem;
+        max-height: 95vh;
+        width: calc(100% - 1rem);
+        border-radius: 0.5rem;
+        overflow-y: auto;
+    }
+    
+    .modal-body {
+        padding: 1rem;
+        max-height: calc(95vh - 4rem);
+        overflow-y: auto;
+    }
+    
+    /* Timeline de educación responsive */
+    .timeline-item {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .timeline-content {
+        margin-left: 0;
+        margin-top: 1rem;
+        width: 100%;
+    }
+    
+    /* Gráficos responsive */
+    .chart-container {
+        height: 200px;
+        margin: 1rem 0;
+    }
+    
+    /* Reducir padding de secciones */
+    section {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+    
+    /* Títulos responsive */
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.75rem; }
+    h3 { font-size: 1.5rem; }
+    h4 { font-size: 1.25rem; }
+    
+    /* Espaciado responsive */
+    .mb-16 { margin-bottom: 2rem; }
+    .mb-12 { margin-bottom: 1.5rem; }
+    .py-24 { padding-top: 3rem; padding-bottom: 3rem; }
+    .py-32 { padding-top: 4rem; padding-bottom: 4rem; }
+}
+
+/* Mejoras para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    /* Contenedor principal */
+    .container {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+    
+    /* Hero más compacto */
+    .hero-section h1 {
+        font-size: 1.75rem;
+    }
+    
+    .hero-section p {
+        font-size: 0.9rem;
+    }
+    
+    /* Cards más compactas */
+    .card {
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    /* Filtros responsive */
+    .filter-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+        margin: 0.25rem;
+    }
+    
+    /* Modal en pantallas muy pequeñas */
+    .modal-content {
+        margin: 0.25rem;
+        width: calc(100% - 0.5rem);
+        max-height: 98vh;
+    }
+    
+    .modal-body {
+        padding: 0.75rem;
+    }
+    
+    /* Timeline más compacta */
+    .timeline-circle {
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 0.75rem;
+    }
+    
+    /* Estadísticas apiladas */
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    /* Botones más pequeños */
+    .certificate-btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.75rem;
+    }
+    
+    .certificate-btn svg {
+        width: 0.875rem;
+        height: 0.875rem;
+    }
+}
+
+/* Mejoras específicas para el CV responsive */
+@media (max-width: 768px) {
+    .cv-section {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .cv-preview {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    
+    .cv-preview object {
+        min-height: 300px;
+        max-height: 400px;
+    }
+    
+    .cv-info {
+        order: -1;
+        text-align: center;
+    }
+    
+    .cv-buttons {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+    
+    .cv-buttons button,
+    .cv-buttons a {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Mejoras para formularios responsive */
+@media (max-width: 768px) {
+    .contact-form {
+        padding: 1.5rem;
+    }
+    
+    .form-group {
+        margin-bottom: 1rem;
+    }
+    
+    .form-input,
+    .form-textarea {
+        padding: 0.75rem;
+        font-size: 1rem;
+    }
+    
+    .form-submit {
+        width: 100%;
+        padding: 1rem;
+        font-size: 1rem;
+    }
+}
+
+/* Mejoras para la galería de proyectos */
+@media (max-width: 768px) {
+    .project-filters {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    .project-card {
+        margin-bottom: 1.5rem;
+    }
+    
+    .project-card img {
+        height: 200px;
+        object-fit: cover;
+    }
+    
+    .project-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+}
+
+/* Navegación sticky responsive */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .mobile-menu {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-radius: 0 0 1rem 1rem;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+    
+    .mobile-menu a {
+        display: block;
+        padding: 0.75rem 1.5rem;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+    }
+    
+    .mobile-menu a:hover {
+        background: rgba(17, 138, 178, 0.1);
+        padding-left: 2rem;
+    }
+    
+    .mobile-menu a:last-child {
+        border-bottom: none;
+        border-radius: 0 0 1rem 1rem;
+    }
+}
+
+/* Animaciones responsive */
+@media (max-width: 768px) {
+    .card:hover {
+        transform: translateY(-2px);
+    }
+    
+    .project-image img {
+        transition: transform 0.2s ease;
+    }
+    
+    .card:hover .project-image img {
+        transform: scale(1.02);
+    }
+}
+
+/* Mejoras para accesibilidad en móviles */
+@media (max-width: 768px) {
+    /* Botones más grandes para touch */
+    button, .btn, a.btn {
+        min-height: 44px;
+        min-width: 44px;
+        padding: 0.75rem 1rem;
+    }
+    
+    /* Enlaces más fáciles de tocar */
+    a {
+        padding: 0.25rem;
+    }
+    
+    /* Formularios más accesibles */
+    input, textarea, select {
+        min-height: 44px;
+        font-size: 16px; /* Evita zoom en iOS */
+    }
+}
+
+/* Landscape móvil */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero-section {
+        padding: 2rem 0;
+        min-height: auto;
+    }
+    
+    .modal-content {
+        max-height: 90vh;
+        margin: 0.5rem;
+    }
+    
+    .modal-body {
+        max-height: calc(90vh - 4rem);
+    }
+}
+
+/* Mejoras para tablets en portrait */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .project-gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+    
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .education-timeline {
+        padding: 0 2rem;
+    }
+}
+
+/* Print styles para CV */
+@media print {
+    .nav-sticky,
+    .mobile-menu,
+    .filter-buttons,
+    .modal-overlay {
+        display: none !important;
+    }
+    
+    .cv-section {
+        page-break-inside: avoid;
+    }
+    
+    .card {
+        break-inside: avoid;
+        margin-bottom: 1rem;
+    }
+}
+
+/* Dark mode support (opcional) */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-light: #1a1a1a;
+        --white: #2d2d2d;
+        --gray-100: #3a3a3a;
+        --gray-200: #4a4a4a;
+    }
+    
+    /* Solo se aplica si el usuario prefiere modo oscuro */
+    body {
+        background-color: var(--background-light);
+        color: #ffffff;
+    }
+    
+    /* Las tarjetas mantienen su fondo blanco original */
+    .card {
+        background-color: #ffffff !important;
+        color: var(--primary-dark);
+    }
+}
+
+/* High contrast support */
+@media (prefers-contrast: high) {
+    .card {
+        border: 2px solid var(--primary-dark);
+    }
+    
+    .btn, button {
+        border: 2px solid currentColor;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
