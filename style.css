@@ -937,3 +937,39 @@ button.secondary:hover,
 .popover::after {
     border-top-color: var(--color-primary);
 }
+
+/* Círculos de años en educación */
+.circle-2024 {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+}
+.circle-2023 {
+  background: linear-gradient(135deg, var(--color-support-yellow), var(--color-support-pink));
+}
+.circle-2022 {
+  background: linear-gradient(135deg, var(--color-secondary), var(--color-support-yellow));
+}
+.circle-2019 {
+  background: linear-gradient(135deg, var(--color-support-pink), var(--color-primary));
+}
+.circle-ean {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-support-pink));
+}
+
+/* Círculos de idiomas */
+.circle-es {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+}
+.circle-br {
+  background: linear-gradient(135deg, var(--color-support-yellow), var(--color-support-pink));
+}
+.circle-us {
+  background: linear-gradient(135deg, var(--color-secondary), var(--color-support-pink));
+}
+
+/* Perfil profesional y experiencia clave */
+.circle-perfil {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+}
+.circle-experiencia {
+  background: linear-gradient(135deg, var(--color-support-yellow), var(--color-support-pink));
+}
