@@ -524,6 +524,6 @@ Este portfolio ha sido diseñado y desarrollado con **❤️ y mucho café** por
 
 **Portfolio Andrea Pujol © 2025** | Diseñado con foco en la experiencia del usuario 🎨
 
-*Última actualización: 6 de Julio de 2025*
+*Última actualización: 7 de Julio de 2025*
 
 </div>
