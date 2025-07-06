@@ -206,7 +206,7 @@ function displayProjects(filter = 'Todos') {
         
         // Configurar el estilo de imagen según el proyecto
         const imageClass = project.id === 'identidad-visual-1' 
-            ? 'w-full h-56 object-contain transition-transform duration-300 bg-white'
+            ? 'w-full h-56 object-cover transition-transform duration-300 scale-200'
             : 'w-full h-56 object-cover transition-transform duration-300';
         
         card.innerHTML = `
