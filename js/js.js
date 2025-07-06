@@ -219,6 +219,8 @@ const closeModalBtn = document.getElementById('modal-close-btn');
 
 // Inicialización cuando el DOM está listo
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM cargado, inicializando aplicación');
+    
     initializeFilters();
     displayProjects();
     initializeScrollAnimations();
@@ -230,6 +232,15 @@ document.addEventListener('DOMContentLoaded', function() {
     optimizeMobileModal();
     improveMobileLoading();
     enhanceMobileAccessibility();
+    
+    // Debug para verificar elementos del menú móvil
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    console.log('Botón hamburguesa encontrado:', !!mobileMenuBtn);
+    console.log('Menú móvil encontrado:', !!mobileMenu);
+    if (mobileMenuBtn) {
+        console.log('Dimensiones del botón:', mobileMenuBtn.getBoundingClientRect());
+    }
 });
 
 // Inicializar filtros
@@ -345,8 +356,18 @@ function generateModalContent(project) {
                     <div class="mt-4">
                         <a href="${project.behanceUrl}" target="_blank" rel="noopener noreferrer" 
                            class="inline-flex items-center px-6 py-3 bg-[#1769FF] hover:bg-[#0052CC] text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
-                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M6.71 4.11c.67 0 1.28.07 1.83.2.55.14 1.01.35 1.4.63.39.28.69.64.9 1.08.21.44.32.96.32 1.56 0 .79-.18 1.43-.54 1.89-.36.47-.87.83-1.53 1.09v.07c.86.18 1.48.62 1.86 1.33.37.7.56 1.53.56 2.47 0 .63-.1 1.2-.29 1.72-.19.52-.49.97-.91 1.34-.42.37-.97.66-1.64.87-.67.21-1.49.31-2.46.31H0V4.11h6.71zm-3.26 2.74v2.31h2.33c.47 0 .88-.1 1.21-.3.34-.2.51-.59.51-1.18 0-.31-.06-.56-.19-.76-.13-.2-.3-.35-.52-.47-.22-.12-.48-.2-.79-.25-.31-.05-.64-.08-1.01-.08h-1.54v.73zm0 4.62v2.8h2.69c.38 0 .72-.04 1.03-.11.31-.08.58-.21.79-.41.22-.19.39-.44.52-.76.12-.31.18-.68.18-1.12 0-.68-.21-1.16-.63-1.44-.42-.28-1.04-.41-1.86-.41H3.45v.05zm9.31-3.77h5.69v1.23h-5.69V7.7zm2.83 5.07c.2 0 .39-.02.57-.05.17-.03.33-.09.46-.17.13-.08.23-.2.31-.35.08-.15.12-.34.12-.57 0-.54-.15-.89-.46-1.05-.31-.16-.76-.23-1.34-.23-.28 0-.54.04-.79.11-.24.07-.46.19-.64.34-.18.15-.32.34-.43.57-.11.23-.16.49-.16.8h-2.25c0-.71.12-1.32.35-1.83.23-.51.57-.94 1-.1.42-.34.92-.59 1.5-.75.57-.16 1.19-.24 1.85-.24.64 0 1.21.08 1.72.23.51.16.95.4 1.31.72.36.32.64.73.84 1.23.2.5.3 1.09.3 1.78v3.89c0 .41.03.76.09 1.03.06.28.17.5.33.66v.14h-2.34c-.09-.14-.15-.33-.18-.57-.03-.24-.06-.52-.09-.82-.24.58-.61 1.01-1.11 1.26-.5.26-1.06.39-1.68.39-.51 0-.96-.08-1.34-.23-.38-.16-.71-.38-.97-.67-.26-.29-.46-.64-.59-1.04-.13-.41-.2-.86-.2-1.36 0-.51.08-.96.24-1.34.16-.39.4-.71.71-.96.32-.26.75-.45 1.31-.57.55-.12 1.25-.18 2.09-.18v-.14c0-.58-.15-.99-.46-1.22-.31-.23-.75-.35-1.32-.35-.64 0-1.12.14-1.45.43-.33.29-.49.74-.49 1.36h-2.25z"/>
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30"
+                                viewBox="0,0,256,256">
+                                <g fill="currentColor" fill-rule="nonzero" stroke="none" stroke-width="1"
+                                    stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10"
+                                    stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none"
+                                    font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+                                    <g transform="scale(5.12,5.12)">
+                                        <path
+                                            d="M9,4c-2.76,0 -5,2.24 -5,5v32c0,2.76 2.24,5 5,5h32c2.76,0 5,-2.24 5,-5v-32c0,-2.76 -2.24,-5 -5,-5zM12,18h6.73047c0.73,0 4.67969,-0.04969 4.67969,3.57031c0,1.92 -1.31039,2.56938 -1.90039,2.85938c0.88,0.28 2.49023,1.09031 2.49023,3.57031c0,3.83 -4.39047,4 -4.98047,4h-7.01953zM29,18h7v2h-7zM15,20.42969v3.28125h3.2207c0.44,0 1.89844,-0.24094 1.89844,-1.71094c0,-1.47 -1.89945,-1.57031 -2.18945,-1.57031zM32.73047,21c3.9,0 4.95914,3.03977 5.11914,3.75977c0.15,0.73 0.15039,1.37023 0.15039,2.24023h-7.90039c0,0.87 0.46102,2.83008 2.79102,2.83008c0.62,0 1.07883,-0.14945 1.54883,-0.43945c0.46,-0.29 0.62148,-0.57133 0.77148,-0.86133h2.62891c-0.46,1.15 -1.07977,2.02156 -2.00977,2.60156c-0.93,0.58 -2.01,0.86914 -3.25,0.86914c-0.78,0 -1.55008,-0.14945 -2.33008,-0.43945c-0.62,-0.29 -1.23922,-0.72039 -1.69922,-1.15039c-0.46,-0.44 -0.77008,-1.02023 -1.08008,-1.74023c-0.31,-0.58 -0.4707,-1.44992 -0.4707,-2.16992c0,-0.72 0.29047,-5.5 5.73047,-5.5zM32.73047,23.0293c-2.26,0 -2.63086,2.17055 -2.63086,2.31055h4.96094c-0.16,-0.72 -0.81008,-2.31055 -2.33008,-2.31055zM15,25.71094v3.85937h3.35156c0.289,0 2.32813,-0.08938 2.32813,-1.85937c0,-1.76 -1.60213,-2 -2.32813,-2z">
+                                        </path>
+                                    </g>
+                                </g>
                             </svg>
                             Ver en Behance
                         </a>
@@ -596,37 +617,32 @@ function initializeNavigation() {
     // Navegación suave para enlaces internos
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-            e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                // Cerrar menú móvil si está abierto
+            // Solo cerrar menú y hacer scroll si el enlace es válido y no es solo '#'
+            if (target && this.getAttribute('href') !== '#') {
+                e.preventDefault();
+                // Cerrar menú móvil si está abierto (la animación y cierre real se gestiona en enhanceMobileNavigation)
                 const mobileMenu = document.getElementById('mobile-menu');
                 if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
-                    mobileMenu.classList.add('hidden');
+                    // Esperar a que el menú se oculte antes de hacer scroll
+                    setTimeout(() => {
+                        scrollToSection(target);
+                    }, 250); // Coincide con la duración de la animación de cierre
+                } else {
+                    scrollToSection(target);
                 }
-                
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
             }
         });
     });
 
-    // Funcionalidad del menú móvil
-    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    
-    if (mobileMenuBtn && mobileMenu) {
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Cerrar menú móvil al hacer clic fuera
-        document.addEventListener('click', (e) => {
-            if (!mobileMenuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
-                mobileMenu.classList.add('hidden');
-            }
+    // Función para hacer scroll considerando la altura del header
+    function scrollToSection(target) {
+        const headerHeight = document.querySelector('header').offsetHeight;
+        const targetPosition = target.offsetTop - headerHeight - 20; // 20px de margen extra
+        
+        window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
         });
     }
 
@@ -636,8 +652,10 @@ function initializeNavigation() {
 
     function highlightActiveSection() {
         let current = '';
+        const headerHeight = document.querySelector('header').offsetHeight;
+        
         sections.forEach(section => {
-            const sectionTop = section.offsetTop - 100;
+            const sectionTop = section.offsetTop - headerHeight - 50;
             if (window.scrollY >= sectionTop) {
                 current = section.getAttribute('id');
             }
@@ -823,52 +841,112 @@ function enhanceMobileNavigation() {
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
     
-    if (mobileMenuBtn && mobileMenu) {
-        // Agregar animación suave al menú
-        mobileMenuBtn.addEventListener('click', function() {
-            const isOpen = !mobileMenu.classList.contains('hidden');
-            
-            if (isOpen) {
-                // Cerrar con animación
-                mobileMenu.style.animation = 'slideUp 0.3s ease-out forwards';
-                setTimeout(() => {
-                    mobileMenu.classList.add('hidden');
-                    mobileMenu.style.animation = '';
-                }, 250);
-            } else {
-                // Abrir con animación
-                mobileMenu.classList.remove('hidden');
-                mobileMenu.style.animation = 'slideDown 0.3s ease-out forwards';
-            }
-        });
+    if (!mobileMenuBtn || !mobileMenu) {
+        console.error('No se encontraron elementos del menú móvil');
+        return;
+    }
+    
+    console.log('Inicializando menú hamburguesa para móvil');
+    
+    // Función simple para toggle del menú
+    function toggleMenu() {
+        const isHidden = mobileMenu.classList.contains('hidden');
+        console.log('Toggle menu - actualmente oculto:', isHidden);
         
-        // Cerrar menú al tocar enlaces
-        const menuLinks = mobileMenu.querySelectorAll('a');
-        menuLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.style.animation = 'slideUp 0.3s ease-out forwards';
-                setTimeout(() => {
-                    mobileMenu.classList.add('hidden');
-                    mobileMenu.style.animation = '';
-                }, 250);
-            });
+        if (isHidden) {
+            // Mostrar menú
+            mobileMenu.classList.remove('hidden');
+            mobileMenu.style.animation = 'slideDown 0.3s ease-out forwards';
+            console.log('Mostrando menú');
+        } else {
+            // Ocultar menú
+            mobileMenu.style.animation = 'slideUp 0.3s ease-out forwards';
+            setTimeout(() => {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.style.animation = '';
+            }, 250);
+            console.log('Ocultando menú');
+        }
+    }
+    
+    // Event listener principal para el botón
+    mobileMenuBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        console.log('Botón hamburguesa clickeado');
+        toggleMenu();
+    });
+    
+    // Event listener para touch en móviles
+    mobileMenuBtn.addEventListener('touchend', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        console.log('Botón hamburguesa tocado');
+        toggleMenu();
+    });
+    
+    // Cerrar menú al hacer clic en enlaces
+    const menuLinks = mobileMenu.querySelectorAll('a');
+    menuLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            console.log('Link del menú clickeado');
+            mobileMenu.style.animation = 'slideUp 0.3s ease-out forwards';
+            setTimeout(() => {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.style.animation = '';
+            }, 250);
         });
-        
-        // Agregar animaciones CSS
+    });
+    
+    // Cerrar menú al hacer clic fuera
+    document.addEventListener('click', function(e) {
+        if (!mobileMenu.classList.contains('hidden') && 
+            !mobileMenu.contains(e.target) && 
+            !mobileMenuBtn.contains(e.target)) {
+            console.log('Click fuera del menú, cerrando');
+            mobileMenu.style.animation = 'slideUp 0.3s ease-out forwards';
+            setTimeout(() => {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.style.animation = '';
+            }, 250);
+        }
+    });
+    
+    // Agregar estilos de animación si no existen
+    if (!document.getElementById('mobile-menu-animations')) {
         const animationStyles = document.createElement('style');
+        animationStyles.id = 'mobile-menu-animations';
         animationStyles.textContent = `
             @keyframes slideDown {
-                from { opacity: 0; transform: translateY(-10px); }
-                to { opacity: 1; transform: translateY(0); }
+                from { 
+                    opacity: 0; 
+                    transform: translateY(-10px);
+                    visibility: visible;
+                }
+                to { 
+                    opacity: 1; 
+                    transform: translateY(0);
+                    visibility: visible;
+                }
             }
             
             @keyframes slideUp {
-                from { opacity: 1; transform: translateY(0); }
-                to { opacity: 0; transform: translateY(-10px); }
+                from { 
+                    opacity: 1; 
+                    transform: translateY(0);
+                    visibility: visible;
+                }
+                to { 
+                    opacity: 0; 
+                    transform: translateY(-10px);
+                    visibility: hidden;
+                }
             }
         `;
         document.head.appendChild(animationStyles);
     }
+    
+    console.log('Menú hamburguesa inicializado correctamente');
 }
 
 // Optimizar modal para móviles
@@ -1185,16 +1263,6 @@ function openCVFullscreen() {
 
 // Event listeners básicos para la aplicación
 document.addEventListener('DOMContentLoaded', function() {
-    // Manejar el menú móvil
-    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    
-    if (mobileMenuBtn && mobileMenu) {
-        mobileMenuBtn.addEventListener('click', function() {
-            mobileMenu.classList.toggle('hidden');
-        });
-    }
-    
     // Agregar clase CSS group al hover del preview del CV
     const cvPreview = document.querySelector('.cv-preview');
     if (cvPreview) {
