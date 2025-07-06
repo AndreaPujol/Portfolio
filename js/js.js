@@ -3,21 +3,21 @@ const projectData = [
     {
         id: 'identidad-visual-1',
         category: 'Identidad Visual',
-        title: 'Cervecería Lúpulo Dorado',
-        subtitle: 'Identidad de marca premium para cervecería artesanal',
-        imageUrl: 'https://placehold.co/600x400/FFD166/073B4C?text=L%C3%BApulo+Dorado',
-        intro: 'Desarrollo completo de identidad visual para una cervecería artesanal premium que busca destacar en el competitivo mercado de cervezas craft. El proyecto abarcó desde la conceptualización hasta la implementación en múltiples touchpoints.',
-        challenge: 'Crear una identidad que transmita calidad premium, tradición cervecera y artesanía, diferenciándose de la competencia masiva y conectando con el público craft.',
-        solution: 'Desarrollé una identidad basada en elementos tradicionales de la cervecería con un toque contemporáneo, utilizando iconografía del lúpulo y referencias doradas que evocan la calidad del producto.',
+        title: 'Psicoterapeuta Holística',
+        subtitle: 'Identidad de marca - Psicoterapeuta Holistica',
+        imageUrl: 'img/identidadVisual/logoJY.png',
+        intro: 'Desarrollo integral de identidad visual para Jy Evolución, psicoterapeuta holística. El objetivo fue crear una imagen que transmita armonía y bienestar, alineada con los valores y la esencia de su práctica. El proyecto incluyó la conceptualización, diseño de logotipo y la aplicación de la identidad en diversos soportes y puntos de contacto, asegurando coherencia y conexión emocional con su público objetivo.',
+        challenge: 'Jy Evolución presentaba una imagen visual desordenada y carecía de una paleta de colores definida, lo que dificulta transmitir armonía y coherencia en su comunicación.',
+        solution: 'Rediseñé todas las portadas de Instagram y desarrollé un manual de marca con lineamientos claros, definiendo la identidad visual y asegurando una presencia coherente y profesional en todos sus canales.',
         process: [
-            'Research de mercado y análisis de competencia',
-            'Entrevistas con stakeholders y definición de valores de marca',
-            'Desarrollo de conceptos y sketches iniciales',
-            'Refinamiento digital en Adobe Illustrator',
-            'Creación de manual de identidad corporativa',
-            'Desarrollo de aplicaciones en packaging y merchandising'
+            'Análisis de la situación actual: Evalué la imagen visual existente y detecté inconsistencias en el uso de colores, tipografías y elementos gráficos, identificando áreas de mejora.',
+            'Definición de objetivos y valores de marca: Trabajé junto a la clienta para entender sus valores, propósito y el mensaje de armonía que quería transmitir, estableciendo una base sólida para el desarrollo visual.',
+            'Investigación y moodboard: Realicé una investigación visual de referencias y tendencias en psicoterapia holística, creando moodboards que inspiran y guían la nueva identidad visual.',
+            'Diseño de identidad visual: Desarrollé una paleta de colores, tipografía y elementos gráficos que comunican armonía y profesionalismo, asegurando coherencia en todos los soportes.',
+            'Rediseño de portadas y piezas para Instagram: Apliqué la nueva identidad visual a todas las portadas y plantillas en Instagram, mejorando la presencia digital y la percepción de la marca.',
+            'Creación de manual de marca: Elaboré un manual de marca con lineamientos claros sobre el uso de los elementos visuales, asegurando una comunicación consistente y profesional en todos los canales'
         ],
-        tools: ['Adobe Illustrator', 'Adobe Photoshop', 'Adobe InDesign'],
+        tools: ['Adobe Illustrator', 'Adobe Photoshop'],
         duration: '6 semanas',
         team: 'Proyecto individual',
         results: [
@@ -25,120 +25,40 @@ const projectData = [
             'Mayor percepción de calidad premium',
             'Implementación exitosa en 15+ puntos de contacto'
         ],
-        moodboardUrl: 'https://placehold.co/800x450/3d2f25/f2f0e6?text=Moodboard+Inspiracional',
-        logosUrl: 'https://placehold.co/800x450/f2f0e6/2c2a29?text=Logotipo+%26+Versiones',
-        mockupsUrl: 'https://placehold.co/800x450/4b7f3a/f2f0e6?text=Aplicaciones+de+Marca',
-        guidelinesUrl: 'https://placehold.co/800x450/FFD166/073B4C?text=Manual+de+Identidad',
+        moodboardUrl: 'img/identidadVisual/moodboard.png',
+        logosUrl: 'img/identidadVisual/OldNew.png',
+        mockupsUrl: 'img/identidadVisual/ManualMarca.png',
+        brandBoardUrl: 'img/identidadVisual/BrandBoard.png',
         colors: {
-            labels: ['Dorado Lúpulo', 'Negro Robusto', 'Blanco Cebada', 'Verde Artesanal'],
-            cmyk: ['C:10 M:25 Y:80 K:0', 'C:75 M:68 Y:67 K:90', 'C:0 M:0 Y:0 K:0', 'C:70 M:30 Y:90 K:20'],
-            hex: ['#FFD166', '#073B4C', '#FFFFFF', '#06D6A0']
+            labels: ['Rosa Suave', 'Lila Elegante', 'Beige Sereno'],
+            cmyk: ['C:0 M:31 Y:34 K:5', 'C:25 M:36 Y:27 K:25', 'C:8 M:11 Y:26 K:8'],
+            hex: ['#F3A9A2', '#BFA4BB', '#EBE3BC']
         },
         typography: { 
-            primary: 'Playfair Display', 
-            secondary: 'Inter',
-            description: 'Combinación de elegancia clásica con modernidad funcional'
+            primary: 'MAGIC RETRO', 
+            secondary: 'Montserrat',
+            description: 'Estilo retro mágico con funcionalidad moderna'
         },
-        behanceUrl: 'AQUIE_TU_URL'
-    },
-    {
-        id: 'editorial-1',
-        category: 'Diseño Editorial',
-        title: 'Revista Nómada',
-        subtitle: 'Publicación digital de viajes y cultura',
-        imageUrl: 'https://placehold.co/600x400/06D6A0/073B4C?text=N%C3%B3mada',
-        intro: 'Diseño completo de una revista digital enfocada en viajes conscientes y experiencias culturales auténticas. El proyecto buscaba crear una experiencia de lectura inmersiva que inspire a explorar el mundo.',
-        challenge: 'Diseñar una revista digital que compita con las grandes publicaciones de viajes, manteniendo una identidad única y mejorando la experiencia de lectura en dispositivos digitales.',
-        solution: 'Desarrollé un sistema de diseño modular que permite flexibilidad editorial mientras mantiene consistencia visual. La tipografía y el uso del espacio blanco crean jerarquías claras que guían al lector.',
-        process: [
-            'Análisis de publicaciones competidoras',
-            'Definición de audiencia objetivo y journey del lector',
-            'Creación de sistema de grillas modulares',
-            'Desarrollo de templates para diferentes tipos de contenido',
-            'Prototipado de experiencia digital',
-            'Testing con usuarios y refinamiento'
-        ],
-        tools: ['Adobe InDesign', 'Adobe Photoshop', 'Figma'],
-        duration: '8 semanas',
-        team: 'Andrea Pujol (Diseño), Editor Jefe, 2 Redactores',
-        results: [
-            'Aumento del 65% en tiempo de permanencia',
-            'Reducción del 30% en tasa de rebote',
-            'Feedback positivo en usabilidad (4.8/5)'
-        ],
-        layoutsUrl: 'https://placehold.co/800x450/06D6A0/FFFFFF?text=Layouts+Editoriales',
-        gridSystemUrl: 'https://placehold.co/800x450/073B4C/06D6A0?text=Sistema+de+Grillas',
-        mockupsUrl: 'https://placehold.co/800x450/F7F9FB/073B4C?text=Mockups+Digitales',
-        colors: {
-            labels: ['Turquesa Viajero', 'Azul Profundo', 'Gris Texto', 'Blanco Espacio'],
-            cmyk: ['C:70 M:0 Y:30 K:0', 'C:100 M:70 Y:0 K:20', 'C:0 M:0 Y:0 K:60', 'C:0 M:0 Y:0 K:0'],
-            hex: ['#06D6A0', '#073B4C', '#4B5563', '#FFFFFF']
-        },
-        typography: { 
-            primary: 'Crimson Text', 
-            secondary: 'Inter',
-            description: 'Elegancia editorial con alta legibilidad digital'
-        },
-        behanceUrl: 'AQUIE_TU_URL'
-    },
-    {
-        id: 'packaging-1',
-        category: 'Packaging',
-        title: 'Alma Lepic Cosméticos',
-        subtitle: 'Línea de cosméticos veganos sustentables',
-        imageUrl: 'https://placehold.co/600x400/FF6B6B/FFFFFF?text=Alma+Lepic',
-        intro: 'Desarrollo integral de packaging para una nueva línea de cosméticos veganos que prioriza la sustentabilidad sin comprometer la elegancia y funcionalidad del diseño.',
-        challenge: 'Crear un packaging que comunique lujo y calidad utilizando únicamente materiales sustentables, diferenciándose en un mercado saturado de productos de belleza.',
-        solution: 'Diseñé un sistema de packaging minimalista con materiales reciclados y reciclables, utilizando una paleta natural que refuerza los valores de la marca y técnicas de impresión eco-friendly.',
-        process: [
-            'Research de tendencias en packaging sustentable',
-            'Análisis de materiales eco-friendly disponibles',
-            'Desarrollo de conceptos de diseño',
-            'Prototipado con materiales reales',
-            'Testing de funcionalidad y durabilidad',
-            'Optimización para producción en masa'
-        ],
-        tools: ['Adobe Illustrator', 'Adobe Photoshop', 'Adobe Dimension'],
-        duration: '10 semanas',
-        team: 'Andrea Pujol (Diseño), Especialista en Sustentabilidad, Ingeniero de Packaging',
-        results: [
-            'Reducción del 70% en materiales no reciclables',
-            'Reconocimiento en premios de packaging sustentable',
-            'Incremento del 45% en percepción de marca premium'
-        ],
-        conceptsUrl: 'https://placehold.co/800x450/FF6B6B/FFFFFF?text=Conceptos+Iniciales',
-        materialsUrl: 'https://placehold.co/800x450/E8F5E8/4A5D4A?text=Materiales+Sustentables',
-        mockupsUrl: 'https://placehold.co/800x450/F5F5DC/8B4513?text=Mockups+3D',
-        colors: {
-            labels: ['Rosa Natural', 'Verde Bosque', 'Beige Orgánico', 'Marrón Tierra'],
-            cmyk: ['C:0 M:40 Y:20 K:0', 'C:60 M:0 Y:80 K:30', 'C:10 M:10 Y:30 K:0', 'C:30 M:60 Y:100 K:20'],
-            hex: ['#FF6B6B', '#2D5016', '#F5F5DC', '#8B4513']
-        },
-        typography: { 
-            primary: 'Montserrat', 
-            secondary: 'Open Sans',
-            description: 'Modernidad limpia con toque humano'
-        },
-        behanceUrl: 'AQUIE_TU_URL'
-    },
+        behanceUrl: 'https://www.behance.net/gallery/229716901/Manual-de-marca-JY'
+    },       
     {
         id: 'ui-ux-1',
-        category: 'Diseño UI & UX',
-        title: 'App de Fitness Manimal',
-        subtitle: 'Aplicación de entrenamiento personalizado',
-        imageUrl: 'https://placehold.co/600x400/118AB2/FFFFFF?text=Manimal',
-        intro: 'Diseño UX/UI completo para una aplicación de fitness que personaliza rutinas de entrenamiento basándose en objetivos individuales, nivel de experiencia y disponibilidad de tiempo del usuario.',
-        challenge: 'Crear una experiencia que motive a usuarios de diferentes niveles a mantener consistencia en sus entrenamientos, simplificando la complejidad de la planificación fitness.',
-        solution: 'Desarrollé una interfaz intuitiva con gamificación sutil, onboarding personalizado y sistema de progreso visual que mantiene a los usuarios motivados y comprometidos con sus objetivos.',
+        category: 'Diseño UX & UI',
+        title: 'UX/UI Research & Design',
+        subtitle: 'Diseño y validación de la experiencia de usuario para una app integral de servicios para mascotas',
+        imageUrl: 'img/manimalResearch/manimalR.PNG',
+        intro: 'Lideré el diseño de “manimal”, una aplicación móvil que centraliza servicios y comercios para mascotas en un solo lugar. Mi objetivo fue crear una experiencia intuitiva, moderna y eficiente, facilitando a los usuarios la búsqueda de centros veterinarios, pet shops, comparación de precios de alimentos y localización de mascotas perdidas, todo filtrado por ubicación. A través de una investigación de mercado profunda y un enfoque centrado en el usuario, diseñé flujos claros, interfaces accesibles y soluciones visuales que resuelven necesidades reales de los amantes de mascotas en contextos urbanos. El resultado es una app atractiva y funcional, que mejora la vida de sus usuarios ahorrando tiempo y simplificando procesos.',
+        challenge: 'Los amantes de las mascotas enfrentan dificultades para encontrar y comparar servicios, productos y lugares pet friendly, perdiendo tiempo en búsquedas dispersas y sin información centralizada.',
+        solution: 'Diseñé una app intuitiva que centraliza centros veterinarios, pet shops, precios de alimentos y servicios, permitiendo a los usuarios acceder rápidamente a toda la información que necesitan, filtrada por ubicación y preferencias.',
         process: [
-            'Research de usuarios y análisis de competencia',
-            'Definición de user personas y journey maps',
-            'Wireframing y arquitectura de información',
-            'Prototipado interactivo en Figma',
-            'Testing de usabilidad con usuarios reales',
-            'Iteración basada en feedback y métricas'
+            'Investigación de usuarios: Realicé entrevistas y encuestas para comprender las necesidades, hábitos y frustraciones de los dueños de mascotas al buscar servicios y productos. Identifiqué los principales puntos de dolor y oportunidades de mejora.',
+            'Benchmarking y análisis de competencia: Analicé aplicaciones y plataformas existentes para detectar fortalezas, debilidades y diferenciales del mercado, asegurando que Manimal ofreciera valor agregado y una experiencia única.',
+            'Definición de perfiles y arquetipos de usuario: Desarrollé personas y escenarios de uso reales, basados en datos recolectados, para guiar el diseño hacia soluciones centradas en el usuario final.',
+            'Mapeo de experiencia y customer journey: Elaboré mapas de experiencia y journeys que reflejan el recorrido del usuario, identificando puntos críticos, emociones y oportunidades de optimización a lo largo de su interacción con la app.',
+            'Ideación y prototipado: Propuse soluciones a partir de insights obtenidos, desarrollando wireframes y prototipos de baja y alta fidelidad para testear rápidamente ideas y flujos.',
+            'Testeo y validación con usuarios: Realicé pruebas de usabilidad con usuarios reales, recogiendo feedback para iterar y refinar la experiencia, asegurando que la solución final sea intuitiva, eficiente y satisfactoria.'
         ],
-        tools: ['Figma', 'Adobe XD', 'Principle', 'InVision'],
+        tools: ['Figma', 'Adobe Photoshop', 'Adobe Illustrator'],
         duration: '12 semanas',
         team: 'Andrea Pujol (UX/UI Lead), Product Manager, 2 Developers, UX Researcher',
         results: [
@@ -146,21 +66,21 @@ const projectData = [
             'Puntuación de 4.7/5 en tiendas de aplicaciones',
             'Incremento del 85% en completación de entrenamientos'
         ],
-        userFlowUrl: 'https://placehold.co/800x450/118AB2/FFFFFF?text=User+Flow+%26+Journey',
+        userFlowUrl: 'img/manimalResearch/ElevatorPitch.jpg',
         wireframesUrl: 'https://placehold.co/800x450/F0F8FF/118AB2?text=Wireframes+%26+Prototipos',
-        uiScreensUrl: 'https://placehold.co/800x450/1E3A8A/FFFFFF?text=Pantallas+Finales',
+        uiScreensUrl: 'img/manimalResearch/PantallaFinalManimalResearch.jpg',
         usabilityUrl: 'https://placehold.co/800x450/06D6A0/FFFFFF?text=Testing+%26+Resultados',
         colors: {
-            labels: ['Azul Energía', 'Verde Progreso', 'Naranja Motivación', 'Gris Interface'],
-            cmyk: ['C:80 M:30 Y:0 K:0', 'C:60 M:0 Y:80 K:0', 'C:0 M:60 Y:100 K:0', 'C:0 M:0 Y:0 K:40'],
-            hex: ['#118AB2', '#06D6A0', '#FFD166', '#9CA3AF']
+            labels: ['Verde Turquesa', 'Amarillo Vibrante', 'Marrón Tierra', 'Naranja Cálido'],
+            cmyk: ['C:100 M:0 Y:35 K:32', 'C:0 M:35 Y:100 K:2', 'C:0 M:40 Y:75 K:38', 'C:0 M:50 Y:85 K:7'],
+            hex: ['#00ada4', '#faba0d', '#9d5c25', '#ed7122']
         },
         typography: { 
-            primary: 'Nunito', 
-            secondary: 'Inter',
-            description: 'Friendly y energética para motivar el entrenamiento'
+            primary: 'Poppins', 
+            secondary: 'Arista 2.0 alternate regular',
+            description: 'Moderna y versátil para el mundo de las mascotas'
         },
-        behanceUrl: 'AQUI_TU_URL'
+        behanceUrl: 'https://www.behance.net/gallery/165362969/Manimal-UX-Caso'
     },
     {
         id: 'manimal',
@@ -179,7 +99,7 @@ const projectData = [
             'Desarrollo de paleta de colores: Selección de una paleta cromática coherente con los valores de la marca, buscando transmitir las sensaciones y emociones deseadas',
             'Definición de tipografía: Elección de fuentes tipográficas que acompañen y refuercen la identidad visual, asegurando legibilidad y armonía en todas las piezas gráficas'
         ],
-        tools: ['Photoshop', 'Illustrator'],
+        tools: ['Adobe Photoshop', 'Adobe Illustrator'],
         duration: '12 semanas',
         team: 'Andrea Pujol (UX/UI Lead), Product Manager, 2 Developers, UX Researcher',
         results: [
@@ -219,28 +139,17 @@ const closeModalBtn = document.getElementById('modal-close-btn');
 
 // Inicialización cuando el DOM está listo
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('DOM cargado, inicializando aplicación');
-    
     initializeFilters();
     displayProjects();
     initializeScrollAnimations();
     initializeNavigation();
     
-    // Nuevas funcionalidades móviles
+    // Funcionalidades móviles
     initializeMobileFeatures();
     enhanceMobileNavigation();
     optimizeMobileModal();
     improveMobileLoading();
     enhanceMobileAccessibility();
-    
-    // Debug para verificar elementos del menú móvil
-    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    console.log('Botón hamburguesa encontrado:', !!mobileMenuBtn);
-    console.log('Menú móvil encontrado:', !!mobileMenu);
-    if (mobileMenuBtn) {
-        console.log('Dimensiones del botón:', mobileMenuBtn.getBoundingClientRect());
-    }
 });
 
 // Inicializar filtros
@@ -295,9 +204,14 @@ function displayProjects(filter = 'Todos') {
         card.className = 'card cursor-pointer group opacity-0 transform translate-y-8';
         card.style.animationDelay = `${index * 0.1}s`;
         
+        // Configurar el estilo de imagen según el proyecto
+        const imageClass = project.id === 'identidad-visual-1' 
+            ? 'w-full h-56 object-contain transition-transform duration-300 bg-white'
+            : 'w-full h-56 object-cover transition-transform duration-300';
+        
         card.innerHTML = `
             <div class="project-image overflow-hidden rounded-t-lg">
-                <img src="${project.imageUrl}" alt="${project.title}" class="w-full h-56 object-cover transition-transform duration-300">
+                <img src="${project.imageUrl}" alt="${project.title}" class="${imageClass}">
             </div>
             <div class="p-6">
                 <div class="category-badge mb-3">${project.category}</div>
@@ -423,9 +337,10 @@ function generateModalContent(project) {
 
     if (project.logosUrl || project.layoutsUrl || project.userFlowUrl) {
         const imageUrl = project.logosUrl || project.layoutsUrl || project.userFlowUrl;
-        const title = project.logosUrl ? 'Desarrollo de Logotipo' : 
+        const title = project.logosUrl ? 'Diseño de branding para redes sociales' : 
                      project.layoutsUrl ? 'Layouts y Composición' : 
                      project.id === 'manimal' ? 'Logo' :
+                     project.id === 'ui-ux-1' ? 'Elevator Pitch' :                     
                      'Flujo de Usuario y Arquitectura';
         
         content += `
@@ -469,10 +384,22 @@ function generateModalContent(project) {
         `;
     }
 
+    // Brand Board
+    if (project.brandBoardUrl) {
+        content += `
+            <div class="project-section">
+                <h3 class="font-bold text-2xl mb-4 text-[#073B4C]">Brand Board</h3>
+                <div class="project-image-gallery">
+                    <img src="${project.brandBoardUrl}" class="w-full rounded-lg shadow-lg" alt="Brand Board del proyecto">
+                </div>
+            </div>
+        `;
+    }
+
     // Aplicaciones y mockups finales
     if (project.mockupsUrl || project.uiScreensUrl) {
         const imageUrl = project.mockupsUrl || project.uiScreensUrl;
-        const title = project.uiScreensUrl ? 'Pantallas Finales de la Aplicación' : 'Aplicaciones de Marca';
+        const title = project.uiScreensUrl ? 'Pantallas Finales de la Aplicación' : 'Manual de Marca';
         
         content += `
             <div class="project-section">
@@ -707,7 +634,7 @@ function optimizeForMobile() {
         }, 16); // ~60fps
     };
     
-    // Precargar menos imágenes en móviles
+    // Precargar imágenes con lazy loading
     const images = document.querySelectorAll('img[data-src]');
     const imageObserver = new IntersectionObserver(
         (entries) => {
@@ -815,14 +742,13 @@ function improveTouchInteractions() {
 
 // Optimizar animaciones para móviles
 function optimizeMobileAnimations() {
-    // Reducir animaciones en dispositivos de bajo rendimiento
     const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
     const isSlowConnection = connection && (connection.saveData || connection.effectiveType === 'slow-2g' || connection.effectiveType === '2g');
     
     if (isSlowConnection) {
         document.body.classList.add('reduce-animations');
         
-        // Agregar CSS para reducir animaciones
+        // CSS para reducir animaciones
         const style = document.createElement('style');
         style.textContent = `
             .reduce-animations *, 
@@ -842,46 +768,35 @@ function enhanceMobileNavigation() {
     const mobileMenu = document.getElementById('mobile-menu');
     
     if (!mobileMenuBtn || !mobileMenu) {
-        console.error('No se encontraron elementos del menú móvil');
         return;
     }
     
-    console.log('Inicializando menú hamburguesa para móvil');
-    
-    // Función simple para toggle del menú
+    // Función para toggle del menú
     function toggleMenu() {
         const isHidden = mobileMenu.classList.contains('hidden');
-        console.log('Toggle menu - actualmente oculto:', isHidden);
         
         if (isHidden) {
-            // Mostrar menú
             mobileMenu.classList.remove('hidden');
             mobileMenu.style.animation = 'slideDown 0.3s ease-out forwards';
-            console.log('Mostrando menú');
         } else {
-            // Ocultar menú
             mobileMenu.style.animation = 'slideUp 0.3s ease-out forwards';
             setTimeout(() => {
                 mobileMenu.classList.add('hidden');
                 mobileMenu.style.animation = '';
             }, 250);
-            console.log('Ocultando menú');
         }
     }
     
-    // Event listener principal para el botón
+    // Event listeners para el botón
     mobileMenuBtn.addEventListener('click', function(e) {
         e.preventDefault();
         e.stopPropagation();
-        console.log('Botón hamburguesa clickeado');
         toggleMenu();
     });
     
-    // Event listener para touch en móviles
     mobileMenuBtn.addEventListener('touchend', function(e) {
         e.preventDefault();
         e.stopPropagation();
-        console.log('Botón hamburguesa tocado');
         toggleMenu();
     });
     
@@ -889,7 +804,6 @@ function enhanceMobileNavigation() {
     const menuLinks = mobileMenu.querySelectorAll('a');
     menuLinks.forEach(link => {
         link.addEventListener('click', function() {
-            console.log('Link del menú clickeado');
             mobileMenu.style.animation = 'slideUp 0.3s ease-out forwards';
             setTimeout(() => {
                 mobileMenu.classList.add('hidden');
@@ -903,7 +817,6 @@ function enhanceMobileNavigation() {
         if (!mobileMenu.classList.contains('hidden') && 
             !mobileMenu.contains(e.target) && 
             !mobileMenuBtn.contains(e.target)) {
-            console.log('Click fuera del menú, cerrando');
             mobileMenu.style.animation = 'slideUp 0.3s ease-out forwards';
             setTimeout(() => {
                 mobileMenu.classList.add('hidden');
@@ -945,8 +858,6 @@ function enhanceMobileNavigation() {
         `;
         document.head.appendChild(animationStyles);
     }
-    
-    console.log('Menú hamburguesa inicializado correctamente');
 }
 
 // Optimizar modal para móviles
@@ -1020,7 +931,6 @@ function improveMobileLoading() {
     // Precargar recursos críticos
     if ('requestIdleCallback' in window) {
         requestIdleCallback(() => {
-            // Precargar el primer proyecto
             if (projectData.length > 0) {
                 const firstProject = projectData[0];
                 const img = new Image();
@@ -1114,12 +1024,12 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Manejar errores de carga
         cvIframe.addEventListener('error', function() {
-            console.log('Error cargando vista previa del CV');
+            // Error silencioso para mejor UX
         });
     }
 });
 
-// Función para descargar CV - solo PDF
+// Función para descargar CV
 function downloadCV() {
     const button = document.querySelector('button[onclick*="downloadCV"]');
     const originalText = button ? button.textContent : '';
@@ -1156,97 +1066,8 @@ function downloadCV() {
     }, 500);
 }
 
-// Manejo mejorado de la vista previa del PDF
-document.addEventListener('DOMContentLoaded', function() {
-    const cvPreview = document.querySelector('.cv-preview');
-    const pdfObject = cvPreview ? cvPreview.querySelector('object[data*=".pdf"]') : null;
-    
-    if (cvPreview) {
-        // Agregar clase de carga inicial
-        cvPreview.classList.add('pdf-loading');
-        
-        // Manejar la carga del PDF
-        if (pdfObject) {
-            pdfObject.addEventListener('load', function() {
-                cvPreview.classList.remove('pdf-loading');
-                cvPreview.classList.add('pdf-loaded');
-                console.log('PDF cargado correctamente');
-            });
-            
-            pdfObject.addEventListener('error', function() {
-                console.log('Error cargando PDF, usando fallback');
-                showFallbackPreview();
-            });
-            
-            // Verificar si el PDF existe después de un tiempo
-            setTimeout(() => {
-                if (!pdfObject.contentDocument && !pdfObject.contentWindow) {
-                    console.log('PDF no disponible, usando fallback');
-                    showFallbackPreview();
-                }
-            }, 3000);
-        }
-        
-        // Controles de zoom para PDF
-        const zoomInBtn = cvPreview.querySelector('.pdf-zoom-in');
-        const zoomOutBtn = cvPreview.querySelector('.pdf-zoom-out');
-        
-        if (zoomInBtn && zoomOutBtn && pdfObject) {
-            let currentZoom = 75;
-            
-            zoomInBtn.addEventListener('click', function(e) {
-                e.stopPropagation();
-                currentZoom = Math.min(150, currentZoom + 25);
-                updatePdfZoom();
-            });
-            
-            zoomOutBtn.addEventListener('click', function(e) {
-                e.stopPropagation();
-                currentZoom = Math.max(50, currentZoom - 25);
-                updatePdfZoom();
-            });
-            
-            function updatePdfZoom() {
-                const newSrc = pdfObject.data.replace(/zoom=\d+/, `zoom=${currentZoom}`);
-                pdfObject.data = newSrc;
-            }
-        }
-        
-        // Mejorar la detección de scroll en el PDF
-        let scrollIndicatorTimeout;
-        cvPreview.addEventListener('mouseenter', function() {
-            clearTimeout(scrollIndicatorTimeout);
-            scrollIndicatorTimeout = setTimeout(() => {
-                this.style.setProperty('--show-scroll-hint', '1');
-            }, 1000);
-        });
-        
-        cvPreview.addEventListener('mouseleave', function() {
-            clearTimeout(scrollIndicatorTimeout);
-            this.style.setProperty('--show-scroll-hint', '0');
-        });
-    }
-    
-    // Función mejorada para fallback
-    function showFallbackPreview() {
-        if (cvPreview) {
-            cvPreview.classList.remove('pdf-loading');
-            cvPreview.classList.add('pdf-fallback');
-            
-            // Ocultar el object del PDF
-            if (pdfObject) {
-                pdfObject.style.display = 'none';
-            }
-            
-            // Mostrar mensaje en la consola para debug
-            console.log('Usando vista previa HTML como fallback del PDF');
-        }
-    }
-});
-
 // Función para abrir el CV en pantalla completa
 function openCVFullscreen() {
-    // Abrir PDF directamente en nueva ventana con tamaño completo
     const pdfWindow = window.open('./CV.pdf', '_blank', 'width=' + screen.width + ',height=' + screen.height + ',fullscreen=yes,resizable=yes,scrollbars=yes,toolbar=yes,menubar=yes');
     
     if (!pdfWindow) {
@@ -1260,12 +1081,3 @@ function openCVFullscreen() {
         document.body.removeChild(link);
     }
 }
-
-// Event listeners básicos para la aplicación
-document.addEventListener('DOMContentLoaded', function() {
-    // Agregar clase CSS group al hover del preview del CV
-    const cvPreview = document.querySelector('.cv-preview');
-    if (cvPreview) {
-        cvPreview.classList.add('group');
-    }
-});

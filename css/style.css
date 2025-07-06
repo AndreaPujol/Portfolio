@@ -5,6 +5,7 @@
 
 /* Variables CSS para colores del tema */
 :root {
+    /* Colores originales - mantenidos para compatibilidad */
     --primary-dark: #073B4C;
     --primary-blue: #118AB2;
     --accent-green: #06D6A0;
@@ -18,15 +19,16 @@
     --gray-700: #374151;
     --gray-800: #1f2937;
 
-  --color-primary: #ef808d;      /* Rosado primario */
-  --color-secondary: #94d2db;    /* Celeste secundario */
-  --color-support-yellow: #f5e0a6; /* Amarillo de apoyo */
-  --color-support-pink: #f5c0bb;   /* Rosa claro de apoyo */
-  
-  /* Gradientes con la nueva paleta */
-  --gradient-primary: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-  --gradient-support: linear-gradient(135deg, var(--color-support-yellow), var(--color-support-pink));
-  --gradient-full: linear-gradient(135deg, var(--color-primary), var(--color-secondary), var(--color-support-yellow));
+    /* Nueva paleta de colores */
+    --color-primary: #ef808d;
+    --color-secondary: #94d2db;
+    --color-support-yellow: #f5e0a6;
+    --color-support-pink: #f5c0bb;
+    
+    /* Gradientes */
+    --gradient-primary: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    --gradient-support: linear-gradient(135deg, var(--color-support-yellow), var(--color-support-pink));
+    --gradient-full: linear-gradient(135deg, var(--color-primary), var(--color-secondary), var(--color-support-yellow));
 }
 
 /* Estilos base */
@@ -823,31 +825,6 @@ section[id] {
 .hover\:bg-primary:hover { background-color: var(--color-primary); }
 .hover\:bg-secondary:hover { background-color: var(--color-secondary); }
 
-/* Estilos adicionales para asegurar compatibilidad */
-.stat-number {
-  background: var(--gradient-primary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* Botones con hover effects mejorados */
-.bg-gradient-primary:hover {
-  background: var(--gradient-support);
-  transform: translateY(-2px);
-}
-
-.bg-gradient-support:hover {
-  background: var(--gradient-primary);
-  transform: translateY(-2px);
-}
-
-/* Estados hover para elementos interactivos */
-.card:hover {
-  box-shadow: 0 20px 40px rgba(239, 128, 141, 0.1);
-  transform: translateY(-5px);
-}
-
 /* Animaciones suaves para las variables de color */
 * {
   transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
@@ -958,6 +935,22 @@ button.secondary:hover,
     color: white !important;
 }
 
+/* Estados hover para elementos interactivos */
+.card:hover {
+    box-shadow: 0 20px 40px rgba(239, 128, 141, 0.1);
+    transform: translateY(-5px);
+}
+
+.bg-gradient-primary:hover {
+    background: var(--gradient-support);
+    transform: translateY(-2px);
+}
+
+.bg-gradient-support:hover {
+    background: var(--gradient-primary);
+    transform: translateY(-2px);
+}
+
 /* Overrides para elementos dinámicos específicos */
 [class*="filter"]:not(.filter-btn) {
     background: var(--color-support-pink);
@@ -971,7 +964,7 @@ button.secondary:hover,
     color: white;
 }
 
-/* Asegurar que los elementos generados dinámicamente usen la paleta */
+/* Elementos generados dinámicamente */
 .dynamic-content .badge,
 .dynamic-content .tag,
 .dynamic-content .category {
@@ -989,13 +982,12 @@ button.secondary:hover,
     color: var(--color-primary);
 }
 
-/* Estados de loading con la nueva paleta */
+/* Estados de loading y tooltips */
 .loading-spinner {
     border-color: var(--color-support-pink);
     border-top-color: var(--color-primary);
 }
 
-/* Tooltips y elementos emergentes */
 .tooltip,
 .popover {
     background: var(--gradient-primary);
