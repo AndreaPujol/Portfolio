@@ -38,7 +38,8 @@ const projectData = [
             primary: 'Playfair Display', 
             secondary: 'Inter',
             description: 'Combinación de elegancia clásica con modernidad funcional'
-        }
+        },
+        behanceUrl: 'AQUIE_TU_URL'
     },
     {
         id: 'editorial-1',
@@ -77,7 +78,8 @@ const projectData = [
             primary: 'Crimson Text', 
             secondary: 'Inter',
             description: 'Elegancia editorial con alta legibilidad digital'
-        }
+        },
+        behanceUrl: 'AQUIE_TU_URL'
     },
     {
         id: 'packaging-1',
@@ -116,7 +118,8 @@ const projectData = [
             primary: 'Montserrat', 
             secondary: 'Open Sans',
             description: 'Modernidad limpia con toque humano'
-        }
+        },
+        behanceUrl: 'AQUIE_TU_URL'
     },
     {
         id: 'ui-ux-1',
@@ -156,7 +159,8 @@ const projectData = [
             primary: 'Nunito', 
             secondary: 'Inter',
             description: 'Friendly y energética para motivar el entrenamiento'
-        }
+        },
+        behanceUrl: 'AQUI_TU_URL'
     },
     {
         id: 'manimal',
@@ -164,18 +168,18 @@ const projectData = [
         title: 'Creación de logo',
         subtitle: 'Identidad Visual y Diseño de Marca',
         imageUrl: 'img/Presentacion.jpg',
-        intro: 'Diseño de logo completo para una aplicación de fitness que personaliza rutinas de entrenamiento basándose en objetivos individuales, nivel de experiencia y disponibilidad de tiempo del usuario.',
-        challenge: 'Crear una experiencia que motive a usuarios de diferentes niveles a mantener consistencia en sus entrenamientos, simplificando la complejidad de la planificación fitness.',
+        intro: 'En este proyecto, llevé adelante el desarrollo integral de la identidad visual para Manimal, abarcando la definición de la paleta cromática, la selección tipográfica y la creación de lineamientos gráficos que transmiten los valores de la marca. Más allá del aspecto visual, me encargué de realizar la investigación UX necesaria para la creación de una aplicación móvil, enfocada en entender las necesidades de los usuarios y optimizar la experiencia dentro de la app.El proceso incluyó la identificación de los distintos perfiles de usuario, el análisis de sus recorridos y expectativas, así como la elaboración de wireframes y prototipos interactivos. Todo este trabajo permitió el diseño de una app intuitiva, funcional y alineada con la propuesta de valor de Manimal, conectando a los usuarios con centros veterinarios, pet shops y otros servicios para mascotas de manera simple y eficiente.',
+        challenge: 'El principal desafío de la creación de Manimal fue acortar y modernizar el nombre original "Mundo Animal". Al unir ambas palabras, logramos una denominación única que sigue transmitiendo el concepto de mundo animal. Además, se diseñó una identidad visual acorde a la app, donde los usuarios pueden encontrar centros veterinarios, pet shops y mucho más, generando una experiencia amigable y coherente con el universo de las mascotas. una experiencia que motive a usuarios de diferentes niveles a mantener consistencia en sus entrenamientos, simplificando la complejidad de la planificación fitness.',
         solution: 'Desarrollé una interfaz intuitiva con gamificación sutil, onboarding personalizado y sistema de progreso visual que mantiene a los usuarios motivados y comprometidos con sus objetivos.',
         process: [
-            'Research de usuarios y análisis de competencia',
-            'Definición de user personas y journey maps',
-            'Wireframing y arquitectura de información',
-            'Prototipado interactivo en Figma',
-            'Testing de usabilidad con usuarios reales',
-            'Iteración basada en feedback y métricas'
+            'Brief y análisis del cliente: Relevamiento de información sobre la identidad, valores y objetivos de la marca para definir el enfoque visual adecuado',
+            'Investigación y referencias: Búsqueda de referencias visuales y análisis de tendencias relacionadas con el sector para inspirar el desarrollo del logotipo y la identidad',
+            'Bocetado y exploración de ideas: Realización de bocetos a mano alzada y exploraciones digitales para definir conceptos iniciales del logo y evaluar posibles direcciones creativas',
+            'Selección y vectorización del logotipo: Elección del boceto final y digitalización/vectorización del logotipo para asegurar su correcta aplicación en distintos formatos y escalas',
+            'Desarrollo de paleta de colores: Selección de una paleta cromática coherente con los valores de la marca, buscando transmitir las sensaciones y emociones deseadas',
+            'Definición de tipografía: Elección de fuentes tipográficas que acompañen y refuercen la identidad visual, asegurando legibilidad y armonía en todas las piezas gráficas'
         ],
-        tools: ['Figma', 'Adobe XD', 'Principle', 'InVision'],
+        tools: ['Photoshop', 'Illustrator'],
         duration: '12 semanas',
         team: 'Andrea Pujol (UX/UI Lead), Product Manager, 2 Developers, UX Researcher',
         results: [
@@ -183,20 +187,21 @@ const projectData = [
             'Puntuación de 4.7/5 en tiendas de aplicaciones',
             'Incremento del 85% en completación de entrenamientos'
         ],
-        userFlowUrl: 'https://placehold.co/800x450/118AB2/FFFFFF?text=User+Flow+%26+Journey',
+        userFlowUrl: 'img/manimalLogo.jpg',
         wireframesUrl: 'https://placehold.co/800x450/F0F8FF/118AB2?text=Wireframes+%26+Prototipos',
-        uiScreensUrl: 'https://placehold.co/800x450/1E3A8A/FFFFFF?text=Pantallas+Finales',
+        uiScreensUrl: 'img/PantallaFinalManimal.jpg',
         usabilityUrl: 'https://placehold.co/800x450/06D6A0/FFFFFF?text=Testing+%26+Resultados',
         colors: {
-            labels: ['Azul Energía', 'Verde Progreso', 'Naranja Motivación', 'Gris Interface'],
-            cmyk: ['C:80 M:30 Y:0 K:0', 'C:60 M:0 Y:80 K:0', 'C:0 M:60 Y:100 K:0', 'C:0 M:0 Y:0 K:40'],
-            hex: ['#118AB2', '#06D6A0', '#FFD166', '#9CA3AF']
+            labels: ['Verde Turquesa', 'Amarillo Vibrante', 'Marrón Tierra', 'Naranja Cálido'],
+            cmyk: ['C:100 M:0 Y:35 K:32', 'C:0 M:35 Y:100 K:2', 'C:0 M:40 Y:75 K:38', 'C:0 M:50 Y:85 K:7'],
+            hex: ['#00ada4', '#faba0d', '#9d5c25', '#ed7122']
         },
         typography: { 
-            primary: 'Nunito', 
-            secondary: 'Inter',
-            description: 'Friendly y energética para motivar el entrenamiento'
-        }
+            primary: 'Poppins', 
+            secondary: 'Arista 2.0 alternate regular',
+            description: 'Moderna y versátil para el mundo de las mascotas'
+        },
+        behanceUrl: 'https://www.behance.net/gallery/197723505/Presentacion_Logo_Manimal'
     }
 ];
 
@@ -331,11 +336,22 @@ function generateModalContent(project) {
                 <div class="category-badge mb-3">${project.category}</div>
                 <h2 class="font-display text-4xl font-bold text-[#073B4C] mb-2">${project.title}</h2>
                 <p class="text-xl text-[#118AB2] mb-4">${project.subtitle}</p>
-                <div class="flex flex-wrap justify-center gap-4 text-sm text-gray-600">
+                <div class="flex flex-wrap justify-center gap-4 text-sm text-gray-600 mb-4">
                     <span><strong>Duración:</strong> ${project.duration}</span>
                     <span><strong>Equipo:</strong> ${project.team}</span>
                     <span><strong>Herramientas:</strong> ${project.tools.join(', ')}</span>
                 </div>
+                ${project.behanceUrl ? `
+                    <div class="mt-4">
+                        <a href="${project.behanceUrl}" target="_blank" rel="noopener noreferrer" 
+                           class="inline-flex items-center px-6 py-3 bg-[#1769FF] hover:bg-[#0052CC] text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                            <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M6.71 4.11c.67 0 1.28.07 1.83.2.55.14 1.01.35 1.4.63.39.28.69.64.9 1.08.21.44.32.96.32 1.56 0 .79-.18 1.43-.54 1.89-.36.47-.87.83-1.53 1.09v.07c.86.18 1.48.62 1.86 1.33.37.7.56 1.53.56 2.47 0 .63-.1 1.2-.29 1.72-.19.52-.49.97-.91 1.34-.42.37-.97.66-1.64.87-.67.21-1.49.31-2.46.31H0V4.11h6.71zm-3.26 2.74v2.31h2.33c.47 0 .88-.1 1.21-.3.34-.2.51-.59.51-1.18 0-.31-.06-.56-.19-.76-.13-.2-.3-.35-.52-.47-.22-.12-.48-.2-.79-.25-.31-.05-.64-.08-1.01-.08h-1.54v.73zm0 4.62v2.8h2.69c.38 0 .72-.04 1.03-.11.31-.08.58-.21.79-.41.22-.19.39-.44.52-.76.12-.31.18-.68.18-1.12 0-.68-.21-1.16-.63-1.44-.42-.28-1.04-.41-1.86-.41H3.45v.05zm9.31-3.77h5.69v1.23h-5.69V7.7zm2.83 5.07c.2 0 .39-.02.57-.05.17-.03.33-.09.46-.17.13-.08.23-.2.31-.35.08-.15.12-.34.12-.57 0-.54-.15-.89-.46-1.05-.31-.16-.76-.23-1.34-.23-.28 0-.54.04-.79.11-.24.07-.46.19-.64.34-.18.15-.32.34-.43.57-.11.23-.16.49-.16.8h-2.25c0-.71.12-1.32.35-1.83.23-.51.57-.94 1-.1.42-.34.92-.59 1.5-.75.57-.16 1.19-.24 1.85-.24.64 0 1.21.08 1.72.23.51.16.95.4 1.31.72.36.32.64.73.84 1.23.2.5.3 1.09.3 1.78v3.89c0 .41.03.76.09 1.03.06.28.17.5.33.66v.14h-2.34c-.09-.14-.15-.33-.18-.57-.03-.24-.06-.52-.09-.82-.24.58-.61 1.01-1.11 1.26-.5.26-1.06.39-1.68.39-.51 0-.96-.08-1.34-.23-.38-.16-.71-.38-.97-.67-.26-.29-.46-.64-.59-1.04-.13-.41-.2-.86-.2-1.36 0-.51.08-.96.24-1.34.16-.39.4-.71.71-.96.32-.26.75-.45 1.31-.57.55-.12 1.25-.18 2.09-.18v-.14c0-.58-.15-.99-.46-1.22-.31-.23-.75-.35-1.32-.35-.64 0-1.12.14-1.45.43-.33.29-.49.74-.49 1.36h-2.25z"/>
+                            </svg>
+                            Ver en Behance
+                        </a>
+                    </div>
+                ` : ''}
             </div>
 
             <!-- Descripción e introducción -->
@@ -388,6 +404,7 @@ function generateModalContent(project) {
         const imageUrl = project.logosUrl || project.layoutsUrl || project.userFlowUrl;
         const title = project.logosUrl ? 'Desarrollo de Logotipo' : 
                      project.layoutsUrl ? 'Layouts y Composición' : 
+                     project.id === 'manimal' ? 'Logo' :
                      'Flujo de Usuario y Arquitectura';
         
         content += `
