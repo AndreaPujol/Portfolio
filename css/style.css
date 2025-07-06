@@ -175,6 +175,9 @@ section[id] {
     max-height: 90vh;
     border-radius: 1rem;
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    /* Mejorar scroll en móviles */
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
 }
 
 /* Animaciones para las secciones */
@@ -406,12 +409,26 @@ section[id] {
         width: calc(100% - 1rem);
         border-radius: 0.5rem;
         overflow-y: auto;
+        /* Mejorar scroll en móviles */
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
+        touch-action: pan-y;
+        /* Asegurar área completa de toque */
+        position: relative;
+        z-index: 1;
     }
     
     .modal-body {
         padding: 1rem;
         max-height: calc(95vh - 4rem);
         overflow-y: auto;
+        /* Scroll suave en móviles */
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
+        touch-action: pan-y;
+        /* Área completa clickable */
+        width: 100%;
+        position: relative;
     }
     
     /* Timeline de educación responsive */
@@ -486,10 +503,21 @@ section[id] {
         margin: 0.25rem;
         width: calc(100% - 0.5rem);
         max-height: 98vh;
+        /* Mejorar scroll tactil */
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
+        touch-action: pan-y;
     }
     
     .modal-body {
         padding: 0.75rem;
+        /* Scroll optimizado para pantallas pequeñas */
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
+        touch-action: pan-y;
+        /* Asegurar área completa de scroll */
+        min-height: 100%;
+        width: 100%;
     }
     
     /* Timeline más compacta */
@@ -1116,5 +1144,84 @@ button.secondary:hover,
         padding: 18px 24px !important;
         min-height: 60px !important;
         font-size: 17px !important;
+    }
+}
+
+/* ========================================
+   MEJORAS ESPECÍFICAS PARA SCROLL EN MÓVILES
+   ======================================== */
+
+/* Mejorar scroll del modal en dispositivos touch */
+@media (max-width: 768px) {
+    .modal-overlay {
+        /* Asegurar área completa de toque */
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
+    }
+    
+    /* Contenido del modal optimizado para scroll tactil */
+    .modal-content,
+    .modal-body,
+    #modal-content {
+        /* Scroll nativo optimizado */
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
+        touch-action: pan-y;
+        /* Remover cualquier restricción de scroll */
+        overflow-x: hidden;
+        overflow-y: auto;
+        /* Asegurar área completa clickable para scroll */
+        width: 100% !important;
+        position: relative;
+    }
+    
+    /* Elementos dentro del modal */
+    .modal-content * {
+        /* Permitir scroll en toda el área */
+        touch-action: manipulation;
+    }
+    
+    /* Optimización específica para WebKit (Safari, Chrome móvil) */
+    .modal-content::-webkit-scrollbar {
+        width: 0px;
+        background: transparent;
+    }
+    
+    /* Asegurar que el scroll funcione en toda el área del modal */
+    .modal-overlay .modal-content {
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE/Edge */
+    }
+    
+    /* Área de scroll visible en el lado derecho si es necesario */
+    @supports (-webkit-overflow-scrolling: touch) {
+        .modal-content {
+            padding-right: 0 !important;
+            margin-right: 0 !important;
+        }
+    }
+}
+
+/* Específico para dispositivos iOS */
+@supports (-webkit-touch-callout: none) {
+    .modal-content,
+    .modal-body {
+        /* Scroll momentum nativo de iOS */
+        -webkit-overflow-scrolling: touch;
+        /* Prevenir rebote excesivo */
+        overscroll-behavior-y: contain;
+        /* Optimizar rendimiento */
+        will-change: scroll-position;
+    }
+}
+
+/* Específico para Android */
+@media (max-width: 768px) and (-webkit-min-device-pixel-ratio: 1) {
+    .modal-content {
+        /* Mejorar scroll en Android */
+        scroll-behavior: smooth;
+        overscroll-behavior: contain;
+        /* Área completa de toque */
+        touch-action: pan-y;
     }
 }
