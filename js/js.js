@@ -5,7 +5,7 @@ const projectData = [
         category: 'Identidad Visual',
         title: 'Psicoterapeuta Holística',
         subtitle: 'Identidad de marca - Psicoterapeuta Holistica',
-        imageUrl: 'img/identidadVisual/logoJY.png',
+        imageUrl: 'img/identidadVisual/LogoJY.png',
         intro: 'Desarrollo integral de identidad visual para Jy Evolución, psicoterapeuta holística. El objetivo fue crear una imagen que transmita armonía y bienestar, alineada con los valores y la esencia de su práctica. El proyecto incluyó la conceptualización, diseño de logotipo y la aplicación de la identidad en diversos soportes y puntos de contacto, asegurando coherencia y conexión emocional con su público objetivo.',
         challenge: 'Jy Evolución presentaba una imagen visual desordenada y carecía de una paleta de colores definida, lo que dificulta transmitir armonía y coherencia en su comunicación.',
         solution: 'Rediseñé todas las portadas de Instagram y desarrollé un manual de marca con lineamientos claros, definiendo la identidad visual y asegurando una presencia coherente y profesional en todos sus canales.',
@@ -25,7 +25,89 @@ const projectData = [
             'Mayor percepción de calidad premium',
             'Implementación exitosa en 15+ puntos de contacto'
         ],
-        moodboardUrl: 'img/identidadVisual/moodboard.png',
+        moodboardUrl: 'img/identidadVisual/MoodBoard.png',
+        logosUrl: 'img/identidadVisual/OldNew.png',
+        mockupsUrl: 'img/identidadVisual/ManualMarca.png',
+        brandBoardUrl: 'img/identidadVisual/BrandBoard.png',
+        colors: {
+            labels: ['Rosa Suave', 'Lila Elegante', 'Beige Sereno'],
+            cmyk: ['C:0 M:31 Y:34 K:5', 'C:25 M:36 Y:27 K:25', 'C:8 M:11 Y:26 K:8'],
+            hex: ['#F3A9A2', '#BFA4BB', '#EBE3BC']
+        },
+        typography: { 
+            primary: 'MAGIC RETRO', 
+            secondary: 'Montserrat',
+            description: 'Estilo retro mágico con funcionalidad moderna'
+        },
+        behanceUrl: 'https://www.behance.net/gallery/229716901/Manual-de-marca-JY'
+    },
+    {
+        id: 'identidad-visual-1',
+        category: 'Identidad Visual',
+        title: 'Psicoterapeuta Holística',
+        subtitle: 'Identidad de marca - Psicoterapeuta Holistica',
+        imageUrl: 'img/identidadVisual/LogoJY.png',
+        intro: 'Desarrollo integral de identidad visual para Jy Evolución, psicoterapeuta holística. El objetivo fue crear una imagen que transmita armonía y bienestar, alineada con los valores y la esencia de su práctica. El proyecto incluyó la conceptualización, diseño de logotipo y la aplicación de la identidad en diversos soportes y puntos de contacto, asegurando coherencia y conexión emocional con su público objetivo.',
+        challenge: 'Jy Evolución presentaba una imagen visual desordenada y carecía de una paleta de colores definida, lo que dificulta transmitir armonía y coherencia en su comunicación.',
+        solution: 'Rediseñé todas las portadas de Instagram y desarrollé un manual de marca con lineamientos claros, definiendo la identidad visual y asegurando una presencia coherente y profesional en todos sus canales.',
+        process: [
+            'Análisis de la situación actual: Evalué la imagen visual existente y detecté inconsistencias en el uso de colores, tipografías y elementos gráficos, identificando áreas de mejora.',
+            'Definición de objetivos y valores de marca: Trabajé junto a la clienta para entender sus valores, propósito y el mensaje de armonía que quería transmitir, estableciendo una base sólida para el desarrollo visual.',
+            'Investigación y moodboard: Realicé una investigación visual de referencias y tendencias en psicoterapia holística, creando moodboards que inspiran y guían la nueva identidad visual.',
+            'Diseño de identidad visual: Desarrollé una paleta de colores, tipografía y elementos gráficos que comunican armonía y profesionalismo, asegurando coherencia en todos los soportes.',
+            'Rediseño de portadas y piezas para Instagram: Apliqué la nueva identidad visual a todas las portadas y plantillas en Instagram, mejorando la presencia digital y la percepción de la marca.',
+            'Creación de manual de marca: Elaboré un manual de marca con lineamientos claros sobre el uso de los elementos visuales, asegurando una comunicación consistente y profesional en todos los canales'
+        ],
+        tools: ['Adobe Illustrator', 'Adobe Photoshop'],
+        duration: '6 semanas',
+        team: 'Proyecto individual',
+        results: [
+            'Incremento del 40% en reconocimiento de marca',
+            'Mayor percepción de calidad premium',
+            'Implementación exitosa en 15+ puntos de contacto'
+        ],
+        moodboardUrl: 'img/identidadVisual/MoodBoard.png',
+        logosUrl: 'img/identidadVisual/OldNew.png',
+        mockupsUrl: 'img/identidadVisual/ManualMarca.png',
+        brandBoardUrl: 'img/identidadVisual/BrandBoard.png',
+        colors: {
+            labels: ['Rosa Suave', 'Lila Elegante', 'Beige Sereno'],
+            cmyk: ['C:0 M:31 Y:34 K:5', 'C:25 M:36 Y:27 K:25', 'C:8 M:11 Y:26 K:8'],
+            hex: ['#F3A9A2', '#BFA4BB', '#EBE3BC']
+        },
+        typography: { 
+            primary: 'MAGIC RETRO', 
+            secondary: 'Montserrat',
+            description: 'Estilo retro mágico con funcionalidad moderna'
+        },
+        behanceUrl: 'https://www.behance.net/gallery/229716901/Manual-de-marca-JY'
+    },
+    {
+        id: 'identidad-visual-1',
+        category: 'Identidad Visual',
+        title: 'Psicoterapeuta Holística',
+        subtitle: 'Identidad de marca - Psicoterapeuta Holistica',
+        imageUrl: 'img/identidadVisual/LogoJY.png',
+        intro: 'Desarrollo integral de identidad visual para Jy Evolución, psicoterapeuta holística. El objetivo fue crear una imagen que transmita armonía y bienestar, alineada con los valores y la esencia de su práctica. El proyecto incluyó la conceptualización, diseño de logotipo y la aplicación de la identidad en diversos soportes y puntos de contacto, asegurando coherencia y conexión emocional con su público objetivo.',
+        challenge: 'Jy Evolución presentaba una imagen visual desordenada y carecía de una paleta de colores definida, lo que dificulta transmitir armonía y coherencia en su comunicación.',
+        solution: 'Rediseñé todas las portadas de Instagram y desarrollé un manual de marca con lineamientos claros, definiendo la identidad visual y asegurando una presencia coherente y profesional en todos sus canales.',
+        process: [
+            'Análisis de la situación actual: Evalué la imagen visual existente y detecté inconsistencias en el uso de colores, tipografías y elementos gráficos, identificando áreas de mejora.',
+            'Definición de objetivos y valores de marca: Trabajé junto a la clienta para entender sus valores, propósito y el mensaje de armonía que quería transmitir, estableciendo una base sólida para el desarrollo visual.',
+            'Investigación y moodboard: Realicé una investigación visual de referencias y tendencias en psicoterapia holística, creando moodboards que inspiran y guían la nueva identidad visual.',
+            'Diseño de identidad visual: Desarrollé una paleta de colores, tipografía y elementos gráficos que comunican armonía y profesionalismo, asegurando coherencia en todos los soportes.',
+            'Rediseño de portadas y piezas para Instagram: Apliqué la nueva identidad visual a todas las portadas y plantillas en Instagram, mejorando la presencia digital y la percepción de la marca.',
+            'Creación de manual de marca: Elaboré un manual de marca con lineamientos claros sobre el uso de los elementos visuales, asegurando una comunicación consistente y profesional en todos los canales'
+        ],
+        tools: ['Adobe Illustrator', 'Adobe Photoshop'],
+        duration: '6 semanas',
+        team: 'Proyecto individual',
+        results: [
+            'Incremento del 40% en reconocimiento de marca',
+            'Mayor percepción de calidad premium',
+            'Implementación exitosa en 15+ puntos de contacto'
+        ],
+        moodboardUrl: 'img/identidadVisual/MoodBoard.png',
         logosUrl: 'img/identidadVisual/OldNew.png',
         mockupsUrl: 'img/identidadVisual/ManualMarca.png',
         brandBoardUrl: 'img/identidadVisual/BrandBoard.png',
