@@ -1,31 +1,31 @@
 // Datos detallados de proyectos de Andrea Pujol
 const projectData = [
     {
-        id: 'identidad-visual-1',
-        category: 'Identidad Visual',
+        id: 'video-editing-1',
+        category: 'Edición de video para e-learning',
         title: 'Psicoterapeuta Holística',
-        subtitle: 'Identidad de marca - Psicoterapeuta Holistica',
+        subtitle: 'Transformación Audiovisual para Capacitaciones Holísticas: Antes & Después',
         imageUrl: 'img/identidadVisual/LogoJY.png',
-        intro: 'Desarrollo integral de identidad visual para Jy Evolución, psicoterapeuta holística. El objetivo fue crear una imagen que transmita armonía y bienestar, alineada con los valores y la esencia de su práctica. El proyecto incluyó la conceptualización, diseño de logotipo y la aplicación de la identidad en diversos soportes y puntos de contacto, asegurando coherencia y conexión emocional con su público objetivo.',
-        challenge: 'Jy Evolución presentaba una imagen visual desordenada y carecía de una paleta de colores definida, lo que dificulta transmitir armonía y coherencia en su comunicación.',
-        solution: 'Rediseñé todas las portadas de Instagram y desarrollé un manual de marca con lineamientos claros, definiendo la identidad visual y asegurando una presencia coherente y profesional en todos sus canales.',
+        intro: 'En este proyecto colaboré con una psicoterapeuta holística para potenciar la calidad visual y narrativa de su programa de capacitaciones online.',
+        challenge: 'Unificar y profesionalizar una serie de videos de capacitación holística grabados en diferentes condiciones, con variaciones en calidad de imagen y sonido.',
+        solution: 'Realicé una edición integral para mejorar color, audio y coherencia visual, incorporando gráficos y transiciones, logrando videos más atractivos y profesionales.eñé todas las portadas de Instagram y desarrollé un manual de marca con lineamientos claros, definiendo la identidad visual y asegurando una presencia coherente y profesional en todos sus canales.',
         process: [
-            'Análisis de la situación actual: Evalué la imagen visual existente y detecté inconsistencias en el uso de colores, tipografías y elementos gráficos, identificando áreas de mejora.',
-            'Definición de objetivos y valores de marca: Trabajé junto a la clienta para entender sus valores, propósito y el mensaje de armonía que quería transmitir, estableciendo una base sólida para el desarrollo visual.',
-            'Investigación y moodboard: Realicé una investigación visual de referencias y tendencias en psicoterapia holística, creando moodboards que inspiran y guían la nueva identidad visual.',
-            'Diseño de identidad visual: Desarrollé una paleta de colores, tipografía y elementos gráficos que comunican armonía y profesionalismo, asegurando coherencia en todos los soportes.',
-            'Rediseño de portadas y piezas para Instagram: Apliqué la nueva identidad visual a todas las portadas y plantillas en Instagram, mejorando la presencia digital y la percepción de la marca.',
-            'Creación de manual de marca: Elaboré un manual de marca con lineamientos claros sobre el uso de los elementos visuales, asegurando una comunicación consistente y profesional en todos los canales'
+            'Recepción y Análisis del Material Original: Revisión de los videos de cada módulo para identificar aspectos técnicos y narrativos a mejorar. de la situación actual: Evalué la imagen visual existente y detecté inconsistencias en el uso de colores, tipografías y elementos gráficos, identificando áreas de mejora.',
+            'Planificación de la Edición: Definición de una línea estética y estructura narrativa coherente para todo el curso.',
+            'Mejoras Técnicas Iniciales: Corrección de color, estabilización de imagen y optimización de audio para unificar la calidad visual y sonora.',
+            'Edición y Montaje: Selección de los mejores fragmentos, ajuste de ritmo y eliminación de errores o repeticiones.',
+            'Incorporación de Elementos Visuales: Integración de gráficos, títulos, transiciones y recursos visuales para reforzar el mensaje educativo.',
+            'Exportación y Presentación Final: Generación de los archivos finales y entrega de un video resumen mostrando el “antes y después” para su difusión en redes.'
         ],
-        tools: ['Adobe Illustrator', 'Adobe Photoshop'],
-        duration: '6 semanas',
+        tools: ['Adobe Premier', 'Capcut Pro', 'Adobe After Effects'],
+        duration: '5 semanas',
         team: 'Proyecto individual',
         results: [
-            'Incremento del 40% en reconocimiento de marca',
-            'Mayor percepción de calidad premium',
-            'Implementación exitosa en 15+ puntos de contacto'
+            'Mayor impacto visual',
+            'Imagen profesional renovada:',
+            'Aumento del engagement'
         ],
-        moodboardUrl: 'img/identidadVisual/MoodBoard.png',
+        moodboardUrl: 'img/Videos/Antes y Después JY.mp4',
         logosUrl: 'img/identidadVisual/OldNew.png',
         mockupsUrl: 'img/identidadVisual/ManualMarca.png',
         brandBoardUrl: 'img/identidadVisual/BrandBoard.png',
@@ -407,11 +407,22 @@ function generateModalContent(project) {
 
     // Agregar secciones específicas según el tipo de proyecto
     if (project.moodboardUrl) {
+        let moodboardTitle = 'Moodboard e Inspiración';
+        let moodboardContent = '';
+        if (project.id === 'video-editing-1' && project.moodboardUrl.endsWith('.mp4')) {
+            moodboardTitle = 'Edición de video antes y después';
+            moodboardContent = `<video controls class="w-full rounded-lg shadow-lg" style="max-height:400px; background:#000;">
+                <source src="${project.moodboardUrl}" type="video/mp4">
+                Tu navegador no soporta la reproducción de video.
+            </video>`;
+        } else {
+            moodboardContent = `<img src="${project.moodboardUrl}" class="w-full rounded-lg shadow-lg" alt="${moodboardTitle}">`;
+        }
         content += `
             <div class="project-section">
-                <h3 class="font-bold text-2xl mb-4 text-[#073B4C]">Moodboard e Inspiración</h3>
+                <h3 class="font-bold text-2xl mb-4 text-[#073B4C]">${moodboardTitle}</h3>
                 <div class="project-image-gallery">
-                    <img src="${project.moodboardUrl}" class="w-full rounded-lg shadow-lg" alt="Moodboard del proyecto">
+                    ${moodboardContent}
                 </div>
             </div>
         `;
