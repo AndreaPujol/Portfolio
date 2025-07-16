@@ -1,11 +1,11 @@
 // Datos detallados de proyectos de Andrea Pujol
 const projectData = [
-    {
-        id: 'video-editing-1',
-        category: 'Edición de video para e-learning',
-        title: 'Psicoterapeuta Holística',
+     {
+        id: 'montaje-historia',
+        category: 'Edición de video',
+        title: 'Montaje de Historia del Cine',
         subtitle: 'Transformación Audiovisual para Capacitaciones Holísticas: Antes & Después',
-        imageUrl: 'img/identidadVisual/LogoJY.png',
+        imageUrl: 'proyectos/Edicion-de-video-e-learning/imagenes/jy_Mesa de trabajo 1_Mesa de trabajo 1.png',
         intro: 'En este proyecto colaboré con una psicoterapeuta holística para potenciar la calidad visual y narrativa de su programa de capacitaciones online.',
         challenge: 'Unificar y profesionalizar una serie de videos de capacitación holística grabados en diferentes condiciones, con variaciones en calidad de imagen y sonido.',
         solution: 'Realicé una edición integral para mejorar color, audio y coherencia visual, incorporando gráficos y transiciones, logrando videos más atractivos y profesionales.eñé todas las portadas de Instagram y desarrollé un manual de marca con lineamientos claros, definiendo la identidad visual y asegurando una presencia coherente y profesional en todos sus canales.',
@@ -25,10 +25,10 @@ const projectData = [
             'Imagen profesional renovada:',
             'Aumento del engagement'
         ],
-        moodboardUrl: 'img/Videos/Antes y Después JY.mp4',
-        logosUrl: 'img/identidadVisual/OldNew.png',
-        mockupsUrl: 'img/identidadVisual/ManualMarca.png',
-        brandBoardUrl: 'img/identidadVisual/BrandBoard.png',
+        moodboardUrl: 'proyectos/Edicion-de-video-e-learning/videos/Antes-y-Despues-JY.mp4',
+        logosUrl: 'proyectos/Edicion-de-video-e-learning/imagenes/OldNew.png',
+        mockupsUrl: 'proyectos/Edicion-de-video-e-learning/imagenes/ManualMarca.png',
+        brandBoardUrl: 'proyectos/Edicion-de-video-e-learning/imagenes/BrandBoard.png',
         colors: {
             labels: ['Rosa Suave', 'Lila Elegante', 'Beige Sereno'],
             cmyk: ['C:0 M:31 Y:34 K:5', 'C:25 M:36 Y:27 K:25', 'C:8 M:11 Y:26 K:8'],
@@ -39,14 +39,55 @@ const projectData = [
             secondary: 'Montserrat',
             description: 'Estilo retro mágico con funcionalidad moderna'
         },
-        behanceUrl: 'https://www.behance.net/gallery/229716901/Manual-de-marca-JY'
+        behanceUrl: 'AQUI_TU_URL'
+    },
+    {
+        id: 'video-editing-1',
+        category: 'Edición de video',
+        title: 'Psicoterapeuta Holística',
+        subtitle: 'Transformación Audiovisual para Capacitaciones Holísticas: Antes & Después',
+        imageUrl: 'proyectos/Edicion-de-video-e-learning/imagenes/jy_Mesa de trabajo 1_Mesa de trabajo 1.png',
+        intro: 'En este proyecto colaboré con una psicoterapeuta holística para potenciar la calidad visual y narrativa de su programa de capacitaciones online.',
+        challenge: 'Unificar y profesionalizar una serie de videos de capacitación holística grabados en diferentes condiciones, con variaciones en calidad de imagen y sonido.',
+        solution: 'Realicé una edición integral para mejorar color, audio y coherencia visual, incorporando gráficos y transiciones, logrando videos más atractivos y profesionales.eñé todas las portadas de Instagram y desarrollé un manual de marca con lineamientos claros, definiendo la identidad visual y asegurando una presencia coherente y profesional en todos sus canales.',
+        process: [
+            'Recepción y Análisis del Material Original: Revisión de los videos de cada módulo para identificar aspectos técnicos y narrativos a mejorar. de la situación actual: Evalué la imagen visual existente y detecté inconsistencias en el uso de colores, tipografías y elementos gráficos, identificando áreas de mejora.',
+            'Planificación de la Edición: Definición de una línea estética y estructura narrativa coherente para todo el curso.',
+            'Mejoras Técnicas Iniciales: Corrección de color, estabilización de imagen y optimización de audio para unificar la calidad visual y sonora.',
+            'Edición y Montaje: Selección de los mejores fragmentos, ajuste de ritmo y eliminación de errores o repeticiones.',
+            'Incorporación de Elementos Visuales: Integración de gráficos, títulos, transiciones y recursos visuales para reforzar el mensaje educativo.',
+            'Exportación y Presentación Final: Generación de los archivos finales y entrega de un video resumen mostrando el “antes y después” para su difusión en redes.'
+        ],
+        tools: ['Adobe Premier', 'Capcut Pro', 'Adobe After Effects'],
+        duration: '5 semanas',
+        team: 'Proyecto individual',
+        results: [
+            'Mayor impacto visual',
+            'Imagen profesional renovada:',
+            'Aumento del engagement'
+        ],
+        moodboardUrl: 'proyectos/Edicion-de-video-e-learning/videos/Antes-y-Despues-JY.mp4',
+        logosUrl: 'proyectos/Edicion-de-video-e-learning/imagenes/OldNew.png',
+        mockupsUrl: 'proyectos/Edicion-de-video-e-learning/imagenes/ManualMarca.png',
+        brandBoardUrl: 'proyectos/Edicion-de-video-e-learning/imagenes/BrandBoard.png',
+        colors: {
+            labels: ['Rosa Suave', 'Lila Elegante', 'Beige Sereno'],
+            cmyk: ['C:0 M:31 Y:34 K:5', 'C:25 M:36 Y:27 K:25', 'C:8 M:11 Y:26 K:8'],
+            hex: ['#F3A9A2', '#BFA4BB', '#EBE3BC']
+        },
+        typography: { 
+            primary: 'MAGIC RETRO', 
+            secondary: 'Montserrat',
+            description: 'Estilo retro mágico con funcionalidad moderna'
+        },
+        behanceUrl: 'https://www.behance.net/gallery/230339351/Edicion-de-video-Color'
     },
     {
         id: 'identidad-visual-1',
         category: 'Identidad Visual',
         title: 'Psicoterapeuta Holística',
         subtitle: 'Identidad de marca - Psicoterapeuta Holistica',
-        imageUrl: 'img/identidadVisual/LogoJY.png',
+        imageUrl: 'proyectos/Identidad-visual/imagenes/LogoJY.png',
         intro: 'Desarrollo integral de identidad visual para Jy Evolución, psicoterapeuta holística. El objetivo fue crear una imagen que transmita armonía y bienestar, alineada con los valores y la esencia de su práctica. El proyecto incluyó la conceptualización, diseño de logotipo y la aplicación de la identidad en diversos soportes y puntos de contacto, asegurando coherencia y conexión emocional con su público objetivo.',
         challenge: 'Jy Evolución presentaba una imagen visual desordenada y carecía de una paleta de colores definida, lo que dificulta transmitir armonía y coherencia en su comunicación.',
         solution: 'Rediseñé todas las portadas de Instagram y desarrollé un manual de marca con lineamientos claros, definiendo la identidad visual y asegurando una presencia coherente y profesional en todos sus canales.',
@@ -66,10 +107,10 @@ const projectData = [
             'Mayor percepción de calidad premium',
             'Implementación exitosa en 15+ puntos de contacto'
         ],
-        moodboardUrl: 'img/identidadVisual/MoodBoard.png',
-        logosUrl: 'img/identidadVisual/OldNew.png',
-        mockupsUrl: 'img/identidadVisual/ManualMarca.png',
-        brandBoardUrl: 'img/identidadVisual/BrandBoard.png',
+        moodboardUrl: 'proyectos/Identidad-visual/imagenes/MoodBoard.png',
+        logosUrl: 'proyectos/Identidad-visual/imagenes/OldNew.png',
+        mockupsUrl: 'proyectos/Identidad-visual/imagenes/ManualMarca.png',
+        brandBoardUrl: 'proyectos/Identidad-visual/imagenes/BrandBoard.png',
         colors: {
             labels: ['Rosa Suave', 'Lila Elegante', 'Beige Sereno'],
             cmyk: ['C:0 M:31 Y:34 K:5', 'C:25 M:36 Y:27 K:25', 'C:8 M:11 Y:26 K:8'],
@@ -82,53 +123,13 @@ const projectData = [
         },
         behanceUrl: 'https://www.behance.net/gallery/229716901/Manual-de-marca-JY'
     },
-    {
-        id: 'identidad-visual-1',
-        category: 'Identidad Visual',
-        title: 'Psicoterapeuta Holística',
-        subtitle: 'Identidad de marca - Psicoterapeuta Holistica',
-        imageUrl: 'img/identidadVisual/LogoJY.png',
-        intro: 'Desarrollo integral de identidad visual para Jy Evolución, psicoterapeuta holística. El objetivo fue crear una imagen que transmita armonía y bienestar, alineada con los valores y la esencia de su práctica. El proyecto incluyó la conceptualización, diseño de logotipo y la aplicación de la identidad en diversos soportes y puntos de contacto, asegurando coherencia y conexión emocional con su público objetivo.',
-        challenge: 'Jy Evolución presentaba una imagen visual desordenada y carecía de una paleta de colores definida, lo que dificulta transmitir armonía y coherencia en su comunicación.',
-        solution: 'Rediseñé todas las portadas de Instagram y desarrollé un manual de marca con lineamientos claros, definiendo la identidad visual y asegurando una presencia coherente y profesional en todos sus canales.',
-        process: [
-            'Análisis de la situación actual: Evalué la imagen visual existente y detecté inconsistencias en el uso de colores, tipografías y elementos gráficos, identificando áreas de mejora.',
-            'Definición de objetivos y valores de marca: Trabajé junto a la clienta para entender sus valores, propósito y el mensaje de armonía que quería transmitir, estableciendo una base sólida para el desarrollo visual.',
-            'Investigación y moodboard: Realicé una investigación visual de referencias y tendencias en psicoterapia holística, creando moodboards que inspiran y guían la nueva identidad visual.',
-            'Diseño de identidad visual: Desarrollé una paleta de colores, tipografía y elementos gráficos que comunican armonía y profesionalismo, asegurando coherencia en todos los soportes.',
-            'Rediseño de portadas y piezas para Instagram: Apliqué la nueva identidad visual a todas las portadas y plantillas en Instagram, mejorando la presencia digital y la percepción de la marca.',
-            'Creación de manual de marca: Elaboré un manual de marca con lineamientos claros sobre el uso de los elementos visuales, asegurando una comunicación consistente y profesional en todos los canales'
-        ],
-        tools: ['Adobe Illustrator', 'Adobe Photoshop'],
-        duration: '6 semanas',
-        team: 'Proyecto individual',
-        results: [
-            'Incremento del 40% en reconocimiento de marca',
-            'Mayor percepción de calidad premium',
-            'Implementación exitosa en 15+ puntos de contacto'
-        ],
-        moodboardUrl: 'img/identidadVisual/MoodBoard.png',
-        logosUrl: 'img/identidadVisual/OldNew.png',
-        mockupsUrl: 'img/identidadVisual/ManualMarca.png',
-        brandBoardUrl: 'img/identidadVisual/BrandBoard.png',
-        colors: {
-            labels: ['Rosa Suave', 'Lila Elegante', 'Beige Sereno'],
-            cmyk: ['C:0 M:31 Y:34 K:5', 'C:25 M:36 Y:27 K:25', 'C:8 M:11 Y:26 K:8'],
-            hex: ['#F3A9A2', '#BFA4BB', '#EBE3BC']
-        },
-        typography: { 
-            primary: 'MAGIC RETRO', 
-            secondary: 'Montserrat',
-            description: 'Estilo retro mágico con funcionalidad moderna'
-        },
-        behanceUrl: 'https://www.behance.net/gallery/229716901/Manual-de-marca-JY'
-    },       
+      
     {
         id: 'ui-ux-1',
         category: 'Diseño UX & UI',
         title: 'UX/UI Research & Design',
         subtitle: 'Diseño y validación de la experiencia de usuario para una app integral de servicios para mascotas',
-        imageUrl: 'img/manimalResearch/manimalR.PNG',
+        imageUrl: 'proyectos/Manimal/imagenes/manimalR.PNG',
         intro: 'Lideré el diseño de “manimal”, una aplicación móvil que centraliza servicios y comercios para mascotas en un solo lugar. Mi objetivo fue crear una experiencia intuitiva, moderna y eficiente, facilitando a los usuarios la búsqueda de centros veterinarios, pet shops, comparación de precios de alimentos y localización de mascotas perdidas, todo filtrado por ubicación. A través de una investigación de mercado profunda y un enfoque centrado en el usuario, diseñé flujos claros, interfaces accesibles y soluciones visuales que resuelven necesidades reales de los amantes de mascotas en contextos urbanos. El resultado es una app atractiva y funcional, que mejora la vida de sus usuarios ahorrando tiempo y simplificando procesos.',
         challenge: 'Los amantes de las mascotas enfrentan dificultades para encontrar y comparar servicios, productos y lugares pet friendly, perdiendo tiempo en búsquedas dispersas y sin información centralizada.',
         solution: 'Diseñé una app intuitiva que centraliza centros veterinarios, pet shops, precios de alimentos y servicios, permitiendo a los usuarios acceder rápidamente a toda la información que necesitan, filtrada por ubicación y preferencias.',
@@ -148,9 +149,9 @@ const projectData = [
             'Puntuación de 4.7/5 en tiendas de aplicaciones',
             'Incremento del 85% en completación de entrenamientos'
         ],
-        userFlowUrl: 'img/manimalResearch/ElevatorPitch.jpg',
+        userFlowUrl: 'proyectos/Manimal/imagenes/ElevatorPitch.jpg',
         wireframesUrl: 'https://placehold.co/800x450/F0F8FF/118AB2?text=Wireframes+%26+Prototipos',
-        uiScreensUrl: 'img/manimalResearch/PantallaFinalManimalResearch.jpg',
+        uiScreensUrl: 'proyectos/Manimal/imagenes/PantallaFinalManimalResearch.jpg',
         usabilityUrl: 'https://placehold.co/800x450/06D6A0/FFFFFF?text=Testing+%26+Resultados',
         colors: {
             labels: ['Verde Turquesa', 'Amarillo Vibrante', 'Marrón Tierra', 'Naranja Cálido'],
@@ -169,7 +170,7 @@ const projectData = [
         category: 'Diseño Gráfico',
         title: 'Creación de logo',
         subtitle: 'Identidad Visual y Diseño de Marca',
-        imageUrl: 'img/Presentacion.jpg',
+        imageUrl: 'proyectos/Manimal/imagenes/Presentacion.jpg',
         intro: 'En este proyecto, llevé adelante el desarrollo integral de la identidad visual para Manimal, abarcando la definición de la paleta cromática, la selección tipográfica y la creación de lineamientos gráficos que transmiten los valores de la marca. Más allá del aspecto visual, me encargué de realizar la investigación UX necesaria para la creación de una aplicación móvil, enfocada en entender las necesidades de los usuarios y optimizar la experiencia dentro de la app.El proceso incluyó la identificación de los distintos perfiles de usuario, el análisis de sus recorridos y expectativas, así como la elaboración de wireframes y prototipos interactivos. Todo este trabajo permitió el diseño de una app intuitiva, funcional y alineada con la propuesta de valor de Manimal, conectando a los usuarios con centros veterinarios, pet shops y otros servicios para mascotas de manera simple y eficiente.',
         challenge: 'El principal desafío de la creación de Manimal fue acortar y modernizar el nombre original "Mundo Animal". Al unir ambas palabras, logramos una denominación única que sigue transmitiendo el concepto de mundo animal. Además, se diseñó una identidad visual acorde a la app, donde los usuarios pueden encontrar centros veterinarios, pet shops y mucho más, generando una experiencia amigable y coherente con el universo de las mascotas. una experiencia que motive a usuarios de diferentes niveles a mantener consistencia en sus entrenamientos, simplificando la complejidad de la planificación fitness.',
         solution: 'Desarrollé una interfaz intuitiva con gamificación sutil, onboarding personalizado y sistema de progreso visual que mantiene a los usuarios motivados y comprometidos con sus objetivos.',
@@ -189,9 +190,9 @@ const projectData = [
             'Puntuación de 4.7/5 en tiendas de aplicaciones',
             'Incremento del 85% en completación de entrenamientos'
         ],
-        userFlowUrl: 'img/manimalLogo.jpg',
+        userFlowUrl: 'proyectos/Manimal/imagenes/manimalLogo.jpg',
         wireframesUrl: 'https://placehold.co/800x450/F0F8FF/118AB2?text=Wireframes+%26+Prototipos',
-        uiScreensUrl: 'img/PantallaFinalManimal.jpg',
+        uiScreensUrl: 'proyectos/Manimal/imagenes/PantallaFinalManimal.jpg',
         usabilityUrl: 'https://placehold.co/800x450/06D6A0/FFFFFF?text=Testing+%26+Resultados',
         colors: {
             labels: ['Verde Turquesa', 'Amarillo Vibrante', 'Marrón Tierra', 'Naranja Cálido'],
@@ -352,19 +353,7 @@ function generateModalContent(project) {
                     <div class="mt-4">
                         <a href="${project.behanceUrl}" target="_blank" rel="noopener noreferrer" 
                            class="inline-flex items-center px-6 py-3 bg-[#1769FF] hover:bg-[#0052CC] text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
-                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30"
-                                viewBox="0,0,256,256">
-                                <g fill="currentColor" fill-rule="nonzero" stroke="none" stroke-width="1"
-                                    stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10"
-                                    stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none"
-                                    font-size="none" text-anchor="none" style="mix-blend-mode: normal">
-                                    <g transform="scale(5.12,5.12)">
-                                        <path
-                                            d="M9,4c-2.76,0 -5,2.24 -5,5v32c0,2.76 2.24,5 5,5h32c2.76,0 5,-2.24 5,-5v-32c0,-2.76 -2.24,-5 -5,-5zM12,18h6.73047c0.73,0 4.67969,-0.04969 4.67969,3.57031c0,1.92 -1.31039,2.56938 -1.90039,2.85938c0.88,0.28 2.49023,1.09031 2.49023,3.57031c0,3.83 -4.39047,4 -4.98047,4h-7.01953zM29,18h7v2h-7zM15,20.42969v3.28125h3.2207c0.44,0 1.89844,-0.24094 1.89844,-1.71094c0,-1.47 -1.89945,-1.57031 -2.18945,-1.57031zM32.73047,21c3.9,0 4.95914,3.03977 5.11914,3.75977c0.15,0.73 0.15039,1.37023 0.15039,2.24023h-7.90039c0,0.87 0.46102,2.83008 2.79102,2.83008c0.62,0 1.07883,-0.14945 1.54883,-0.43945c0.46,-0.29 0.62148,-0.57133 0.77148,-0.86133h2.62891c-0.46,1.15 -1.07977,2.02156 -2.00977,2.60156c-0.93,0.58 -2.01,0.86914 -3.25,0.86914c-0.78,0 -1.55008,-0.14945 -2.33008,-0.43945c-0.62,-0.29 -1.23922,-0.72039 -1.69922,-1.15039c-0.46,-0.44 -0.77008,-1.02023 -1.08008,-1.74023c-0.31,-0.58 -0.4707,-1.44992 -0.4707,-2.16992c0,-0.72 0.29047,-5.5 5.73047,-5.5zM32.73047,23.0293c-2.26,0 -2.63086,2.17055 -2.63086,2.31055h4.96094c-0.16,-0.72 -0.81008,-2.31055 -2.33008,-2.31055zM15,25.71094v3.85937h3.35156c0.289,0 2.32813,-0.08938 2.32813,-1.85937c0,-1.76 -1.60213,-2 -2.32813,-2z">
-                                        </path>
-                                    </g>
-                                </g>
-                            </svg>
+                            <!-- ...svg... -->
                             Ver en Behance
                         </a>
                     </div>
@@ -405,7 +394,7 @@ function generateModalContent(project) {
             </div>
     `;
 
-    // Agregar secciones específicas según el tipo de proyecto
+    // Sección Moodboard/video (mantener para este proyecto)
     if (project.moodboardUrl) {
         let moodboardTitle = 'Moodboard e Inspiración';
         let moodboardContent = '';
@@ -428,80 +417,78 @@ function generateModalContent(project) {
         `;
     }
 
-    if (project.logosUrl || project.layoutsUrl || project.userFlowUrl) {
-        const imageUrl = project.logosUrl || project.layoutsUrl || project.userFlowUrl;
-        const title = project.logosUrl ? 'Diseño de branding para redes sociales' : 
-                     project.layoutsUrl ? 'Layouts y Composición' : 
-                     project.id === 'manimal' ? 'Logo' :
-                     project.id === 'ui-ux-1' ? 'Elevator Pitch' :                     
-                     'Flujo de Usuario y Arquitectura';
-        
-        content += `
-            <div class="project-section">
-                <h3 class="font-bold text-2xl mb-4 text-[#073B4C]">${title}</h3>
-                <div class="project-image-gallery">
-                    <img src="${imageUrl}" class="w-full rounded-lg shadow-lg" alt="${title}">
-                </div>
-            </div>
-        `;
-    }
-
-    // Paleta de colores y tipografía
-    if (project.colors) {
-        content += `
-            <div class="project-section">
-                <h3 class="font-bold text-2xl mb-4 text-[#073B4C]">Paleta de Colores y Tipografía</h3>
-                <div class="grid lg:grid-cols-2 gap-8 items-center">
-                    <div>
-                        <h4 class="font-semibold text-lg mb-3 text-[#118AB2]">Paleta Cromática</h4>
-                        <div class="chart-container">
-                            <canvas id="color-chart-canvas"></canvas>
-                        </div>
-                    </div>
-                    <div>
-                        <h4 class="font-semibold text-lg mb-4 text-[#118AB2]">Tipografía</h4>
-                        <div class="space-y-4">
-                            <div class="p-4 bg-white rounded-lg border border-gray-200">
-                                <p class="font-bold text-2xl" style="font-family: '${project.typography.primary}', serif;">${project.typography.primary}</p>
-                                <p class="text-gray-600 text-sm mt-1">Títulos y destacados</p>
-                            </div>
-                            <div class="p-4 bg-white rounded-lg border border-gray-200">
-                                <p class="font-semibold text-lg" style="font-family: '${project.typography.secondary}', sans-serif;">${project.typography.secondary}</p>
-                                <p class="text-gray-600 text-sm mt-1">Cuerpo de texto</p>
-                            </div>
-                            <p class="text-sm text-gray-600 italic">${project.typography.description}</p>
-                        </div>
+    // Solo mostrar las siguientes secciones si NO es video-editing-1
+    if (project.id !== 'video-editing-1') {
+        if (project.logosUrl || project.layoutsUrl || project.userFlowUrl) {
+            const imageUrl = project.logosUrl || project.layoutsUrl || project.userFlowUrl;
+            const title = project.logosUrl ? 'Diseño de branding para redes sociales' : 
+                         project.layoutsUrl ? 'Layouts y Composición' : 
+                         project.id === 'manimal' ? 'Logo' :
+                         project.id === 'ui-ux-1' ? 'Elevator Pitch' :                     
+                         'Flujo de Usuario y Arquitectura';
+            content += `
+                <div class="project-section">
+                    <h3 class="font-bold text-2xl mb-4 text-[#073B4C]">${title}</h3>
+                    <div class="project-image-gallery">
+                        <img src="${imageUrl}" class="w-full rounded-lg shadow-lg" alt="${title}">
                     </div>
                 </div>
-            </div>
-        `;
-    }
-
-    // Brand Board
-    if (project.brandBoardUrl) {
-        content += `
-            <div class="project-section">
-                <h3 class="font-bold text-2xl mb-4 text-[#073B4C]">Brand Board</h3>
-                <div class="project-image-gallery">
-                    <img src="${project.brandBoardUrl}" class="w-full rounded-lg shadow-lg" alt="Brand Board del proyecto">
+            `;
+        }
+        // Paleta de colores y tipografía
+        if (project.colors) {
+            content += `
+                <div class="project-section">
+                    <h3 class="font-bold text-2xl mb-4 text-[#073B4C]">Paleta de Colores y Tipografía</h3>
+                    <div class="grid lg:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <h4 class="font-semibold text-lg mb-3 text-[#118AB2]">Paleta Cromática</h4>
+                            <div class="chart-container">
+                                <canvas id="color-chart-canvas"></canvas>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-lg mb-4 text-[#118AB2]">Tipografía</h4>
+                            <div class="space-y-4">
+                                <div class="p-4 bg-white rounded-lg border border-gray-200">
+                                    <p class="font-bold text-2xl" style="font-family: '${project.typography.primary}', serif;">${project.typography.primary}</p>
+                                    <p class="text-gray-600 text-sm mt-1">Títulos y destacados</p>
+                                </div>
+                                <div class="p-4 bg-white rounded-lg border border-gray-200">
+                                    <p class="font-semibold text-lg" style="font-family: '${project.typography.secondary}', sans-serif;">${project.typography.secondary}</p>
+                                    <p class="text-gray-600 text-sm mt-1">Cuerpo de texto</p>
+                                </div>
+                                <p class="text-sm text-gray-600 italic">${project.typography.description}</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        `;
-    }
-
-    // Aplicaciones y mockups finales
-    if (project.mockupsUrl || project.uiScreensUrl) {
-        const imageUrl = project.mockupsUrl || project.uiScreensUrl;
-        const title = project.uiScreensUrl ? 'Pantallas Finales de la Aplicación' : 'Manual de Marca';
-        
-        content += `
-            <div class="project-section">
-                <h3 class="font-bold text-2xl mb-4 text-[#073B4C]">${title}</h3>
-                <div class="project-image-gallery">
-                    <img src="${imageUrl}" class="w-full rounded-lg shadow-lg" alt="${title}">
+            `;
+        }
+        // Brand Board
+        if (project.brandBoardUrl) {
+            content += `
+                <div class="project-section">
+                    <h3 class="font-bold text-2xl mb-4 text-[#073B4C]">Brand Board</h3>
+                    <div class="project-image-gallery">
+                        <img src="${project.brandBoardUrl}" class="w-full rounded-lg shadow-lg" alt="Brand Board del proyecto">
+                    </div>
                 </div>
-            </div>
-        `;
+            `;
+        }
+        // Aplicaciones y mockups finales
+        if (project.mockupsUrl || project.uiScreensUrl) {
+            const imageUrl = project.mockupsUrl || project.uiScreensUrl;
+            const title = project.uiScreensUrl ? 'Pantallas Finales de la Aplicación' : 'Manual de Marca';
+            content += `
+                <div class="project-section">
+                    <h3 class="font-bold text-2xl mb-4 text-[#073B4C]">${title}</h3>
+                    <div class="project-image-gallery">
+                        <img src="${imageUrl}" class="w-full rounded-lg shadow-lg" alt="${title}">
+                    </div>
+                </div>
+            `;
+        }
     }
 
     // Resultados y métricas
