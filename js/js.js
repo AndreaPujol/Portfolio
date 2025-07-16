@@ -4,28 +4,28 @@ const projectData = [
         id: 'montaje-historia',
         category: 'Edición de video',
         title: 'Montaje de Historia del Cine',
-        subtitle: 'Transformación Audiovisual para Capacitaciones Holísticas: Antes & Después',
-        imageUrl: 'proyectos/Edicion-de-video-e-learning/imagenes/jy_Mesa de trabajo 1_Mesa de trabajo 1.png',
-        intro: 'En este proyecto colaboré con una psicoterapeuta holística para potenciar la calidad visual y narrativa de su programa de capacitaciones online.',
-        challenge: 'Unificar y profesionalizar una serie de videos de capacitación holística grabados en diferentes condiciones, con variaciones en calidad de imagen y sonido.',
-        solution: 'Realicé una edición integral para mejorar color, audio y coherencia visual, incorporando gráficos y transiciones, logrando videos más atractivos y profesionales.eñé todas las portadas de Instagram y desarrollé un manual de marca con lineamientos claros, definiendo la identidad visual y asegurando una presencia coherente y profesional en todos sus canales.',
+        subtitle: 'Montaje audiovisual con guion propio, adaptando y restaurando escenas de películas de los 90/2000 para redes',
+        imageUrl: 'proyectos/Edicion-de-video-cine/imagenes/Nuevo-cine-argentino.JPG',
+        intro: 'Realización de un montaje audiovisual de Historia del Cine, centrado en la reinterpretación de escenas de películas de los años 90 y 2000, adaptándolas a formatos modernos para redes sociales.',
+        challenge: 'El principal reto fue encontrar recursos audiovisuales de películas antiguas y transformarlo en formatos compatibles con redes sociales. Mejorando su calidad visual para hacerlos atractivos a la audiencia actual..',
+        solution: 'Se trabajó en la búsqueda, digitalización y restauración de fragmentos seleccionados, aplicando técnicas de edición para optimizar la resolución, el color y el formato, logrando una presentación dinámica y profesional adaptada a plataformas digitales..',
         process: [
-            'Recepción y Análisis del Material Original: Revisión de los videos de cada módulo para identificar aspectos técnicos y narrativos a mejorar. de la situación actual: Evalué la imagen visual existente y detecté inconsistencias en el uso de colores, tipografías y elementos gráficos, identificando áreas de mejora.',
-            'Planificación de la Edición: Definición de una línea estética y estructura narrativa coherente para todo el curso.',
-            'Mejoras Técnicas Iniciales: Corrección de color, estabilización de imagen y optimización de audio para unificar la calidad visual y sonora.',
-            'Edición y Montaje: Selección de los mejores fragmentos, ajuste de ritmo y eliminación de errores o repeticiones.',
-            'Incorporación de Elementos Visuales: Integración de gráficos, títulos, transiciones y recursos visuales para reforzar el mensaje educativo.',
-            'Exportación y Presentación Final: Generación de los archivos finales y entrega de un video resumen mostrando el “antes y después” para su difusión en redes.'
+            'Guion Original: Escritura del guion, adaptando las escenas seleccionadas a una narrativa contemporánea.',
+            'Selección de Material: Investigación y selección de escenas relevantes de películas de los años 90 y 2000.',
+            'Obtención de Recursos: Búsqueda y obtención de material audiovisual en la mejor calidad disponible.',
+            'Adaptación de Formatos: Conversión y adaptación de los formatos originales a los requeridos por redes sociales (vertical/horizontal, resolución, duración).',
+            'Restauración y Edición: Mejoras de imagen y sonido, aplicando restauración para optimizar nitidez, color y audio.',
+            'Montaje y Exportación: Montaje creativo con transiciones y efectos actuales, seguido de la optimización final y exportación para diferentes plataformas.'
         ],
-        tools: ['Adobe Premier', 'Capcut Pro', 'Adobe After Effects'],
-        duration: '5 semanas',
+        tools: ['Adobe Premier', 'Capcut Pro', ],
+        duration: '1 semanas',
         team: 'Proyecto individual',
         results: [
             'Mayor impacto visual',
-            'Imagen profesional renovada:',
+            'Imagen profesional renovada',
             'Aumento del engagement'
         ],
-        moodboardUrl: 'proyectos/Edicion-de-video-e-learning/videos/Antes-y-Despues-JY.mp4',
+        moodboardUrl: 'proyectos\\Edicion-de-video-cine\\Videos\\21.mp4',
         logosUrl: 'proyectos/Edicion-de-video-e-learning/imagenes/OldNew.png',
         mockupsUrl: 'proyectos/Edicion-de-video-e-learning/imagenes/ManualMarca.png',
         brandBoardUrl: 'proyectos/Edicion-de-video-e-learning/imagenes/BrandBoard.png',
@@ -39,7 +39,14 @@ const projectData = [
             secondary: 'Montserrat',
             description: 'Estilo retro mágico con funcionalidad moderna'
         },
-        behanceUrl: 'AQUI_TU_URL'
+        behanceUrl: 'https://www.behance.net/gallery/230332295/Montaje-Cine-Argentino-IG',
+        videos: [
+            {
+                title: 'Video 21',
+                url: 'proyectos/Edicion-de-video-e-learning/videos/21.mp4',
+                description: 'Video adicional del montaje de historia del cine.'
+            }
+        ],
     },
     {
         id: 'video-editing-1',
@@ -394,12 +401,12 @@ function generateModalContent(project) {
             </div>
     `;
 
-    // Sección Moodboard/video (mantener para este proyecto)
+    // Sección Moodboard/video para montaje-historia y video-editing-1
     if (project.moodboardUrl) {
         let moodboardTitle = 'Moodboard e Inspiración';
         let moodboardContent = '';
-        if (project.id === 'video-editing-1' && project.moodboardUrl.endsWith('.mp4')) {
-            moodboardTitle = 'Edición de video antes y después';
+        if ((project.id === 'montaje-historia' || project.id === 'video-editing-1') && project.moodboardUrl.endsWith('.mp4')) {
+            moodboardTitle = project.id === 'montaje-historia' ? 'Montaje de vídeo de historia del cine' : 'Edición de video antes y después';
             moodboardContent = `<video controls class="w-full rounded-lg shadow-lg" style="max-height:400px; background:#000;">
                 <source src="${project.moodboardUrl}" type="video/mp4">
                 Tu navegador no soporta la reproducción de video.
@@ -417,8 +424,8 @@ function generateModalContent(project) {
         `;
     }
 
-    // Solo mostrar las siguientes secciones si NO es video-editing-1
-    if (project.id !== 'video-editing-1') {
+    // Solo mostrar las siguientes secciones si NO es video-editing-1 NI montaje-historia
+    if (project.id !== 'video-editing-1' && project.id !== 'montaje-historia') {
         if (project.logosUrl || project.layoutsUrl || project.userFlowUrl) {
             const imageUrl = project.logosUrl || project.layoutsUrl || project.userFlowUrl;
             const title = project.logosUrl ? 'Diseño de branding para redes sociales' : 
