@@ -402,11 +402,28 @@ function generateModalContent(project) {
     `;
 
     // Sección Moodboard/video para montaje-historia y video-editing-1
-    if (project.moodboardUrl) {
+    if (project.id === 'montaje-historia') {
+        // Solo mostrar la vista previa de YouTube para montaje-historia
+        const moodboardTitle = 'Montaje de vídeo de historia del cine';
+        const moodboardContent = `<div class="flex flex-col items-center">
+            <h4 class="font-semibold text-lg mb-2 text-[#118AB2]">Vista previa en YouTube</h4>
+            <div class="w-full flex justify-center">
+                <iframe width="360" height="640" src="https://www.youtube.com/embed/Ogy5izsGXRw?rel=0&modestbranding=1&playsinline=1" title="Montaje de Historia del Cine - YouTube Shorts" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen class="rounded-lg shadow-lg" style="max-width:100%; aspect-ratio:9/16;"></iframe>
+            </div>
+        </div>`;
+        content += `
+            <div class="project-section">
+                <h3 class="font-bold text-2xl mb-4 text-[#073B4C]">${moodboardTitle}</h3>
+                <div class="project-image-gallery">
+                    ${moodboardContent}
+                </div>
+            </div>
+        `;
+    } else if (project.moodboardUrl) {
         let moodboardTitle = 'Moodboard e Inspiración';
         let moodboardContent = '';
-        if ((project.id === 'montaje-historia' || project.id === 'video-editing-1') && project.moodboardUrl.endsWith('.mp4')) {
-            moodboardTitle = project.id === 'montaje-historia' ? 'Montaje de vídeo de historia del cine' : 'Edición de video antes y después';
+        if (project.id === 'video-editing-1' && project.moodboardUrl.endsWith('.mp4')) {
+            moodboardTitle = 'Edición de video antes y después';
             moodboardContent = `<video controls class="w-full rounded-lg shadow-lg" style="max-height:400px; background:#000;">
                 <source src="${project.moodboardUrl}" type="video/mp4">
                 Tu navegador no soporta la reproducción de video.
