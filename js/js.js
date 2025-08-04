@@ -90,6 +90,80 @@ const projectData = [
         behanceUrl: 'https://www.behance.net/gallery/230339351/Edicion-de-video-Color'
     },
     {
+        id: 'redes-sociales',
+        category: 'Edición de video',
+        title: 'Redes Sociales - CarpaLovers',
+        subtitle: 'Creación de contenido audiovisual para TikTok con enfoque en storytelling y engagement',
+        imageUrl: 'proyectos/Redes-sociales/imagenes/carpalovers-portada.png',
+        intro: 'Desarrollo integral de contenido audiovisual para la cuenta @CarpaLovers en TikTok, enfocado en crear narrativas visuales atractivas que conecten con la audiencia através de historias auténticas y creativas.',
+        challenge: 'Crear contenido audiovisual que destaque en una plataforma altamente competitiva como TikTok, manteniendo una identidad visual coherente y generando engagement genuino con la audiencia.',
+        solution: 'Desarrollé una estrategia de contenido basada en storytelling visual, utilizando técnicas de edición dinámicas, música trending y elementos gráficos que refuerzan el mensaje y la identidad de la marca CarpaLovers.',
+        process: [
+            'Investigación de tendencias: Análisis de tendencias actuales en TikTok y estudio de la audiencia objetivo para crear contenido relevante.',
+            'Desarrollo de guiones: Escritura de guiones creativos adaptados al formato vertical y duración óptima de TikTok.',
+            'Grabación y captura: Planificación y ejecución de grabaciones con diferentes ángulos y elementos visuales atractivos.',
+            'Edición y montaje: Edición dinámica con transiciones, efectos, música sincronizada y elementos gráficos.',
+            'Optimización para plataforma: Adaptación del contenido a los algoritmos de TikTok, uso de hashtags estratégicos.',
+            'Publicación y seguimiento: Programación de publicaciones y análisis de métricas para optimización continua.'
+        ],
+        tools: ['CapCut Pro', 'Adobe Premiere', 'Canva'],
+        duration: '6 meses (proyecto continuo)',
+        team: 'Proyecto individual - Rol: Guion, edición, montaje, publicación',
+        results: [
+            'Crecimiento orgánico de seguidores',
+            'Alto engagement rate',
+            'Contenido viral con +100K visualizaciones'
+        ],
+        videos: [
+            {
+                title: 'Video Viral CarpaLovers #1',
+                url: 'https://www.tiktok.com/@carpalovers/video/7478081429641989381',
+                description: 'Contenido creativo que alcanzó alta viralidad - Rol: Guion, edición, montaje, publicación',
+                thumbnail: 'proyectos/Redes-sociales/imagenes/video1-thumb.jpg',
+                metrics: {
+                    views: '1.5M+',
+                    likes: '46.6K+',
+                    shares: '12.4K+',
+                    comments: '280+'
+                }
+            },
+            {
+                title: 'Video Trending CarpaLovers #2', 
+                url: 'https://www.tiktok.com/@carpalovers/video/7196130574606552326',
+                description: 'Video que siguió tendencia viral exitosamente - Rol: Guion, edición, montaje, publicación',
+                thumbnail: 'proyectos/Redes-sociales/imagenes/video2-thumb.jpg',
+                metrics: {
+                    views: '41.6K+',
+                    likes: '498+',
+                    shares: '506+',
+                    comments: '145+'
+                }
+            },
+            {
+                title: 'Video Storytelling CarpaLovers #3',
+                url: 'https://www.tiktok.com/@carpalovers/video/7476991105767181623', 
+                description: 'Narrativa visual con alto engagement emocional - Rol: Guion, edición, montaje, publicación',
+                thumbnail: 'proyectos/Redes-sociales/imagenes/video3-thumb.jpg',
+                metrics: {
+                    views: '46.5K+',
+                    likes: '567+',
+                    shares: '116+',
+                    comments: '620+'
+                }
+            }
+        ],
+        colors: {
+            labels: ['Rosa Vibrante', 'Azul Cielo', 'Verde Fresco', 'Amarillo Energía'],
+            cmyk: ['C:0 M:60 Y:40 K:0', 'C:45 M:0 Y:15 K:0', 'C:40 M:0 Y:60 K:0', 'C:0 M:20 Y:90 K:0'],
+            hex: ['#FF6B9D', '#87CEEB', '#90EE90', '#FFD700']
+        },
+        typography: { 
+            primary: 'Montserrat', 
+            secondary: 'Roboto',
+            description: 'Tipografías modernas y legibles para redes sociales'
+        }
+    },
+    {
         id: 'identidad-visual-1',
         category: 'Identidad Visual',
         title: 'Psicoterapeuta Holística',
@@ -342,6 +416,16 @@ function openModal(project) {
     }
 }
 
+// Función para generar gradientes coloridos para videos
+function getVideoGradient(index) {
+    const gradients = [
+        'from-pink-400 via-purple-500 to-blue-500',
+        'from-green-400 via-blue-500 to-purple-600',
+        'from-yellow-400 via-red-500 to-pink-500'
+    ];
+    return gradients[index % gradients.length];
+}
+
 // Generar contenido completo del modal
 function generateModalContent(project) {
     let content = `
@@ -441,8 +525,70 @@ function generateModalContent(project) {
         `;
     }
 
-    // Solo mostrar las siguientes secciones si NO es video-editing-1 NI montaje-historia
-    if (project.id !== 'video-editing-1' && project.id !== 'montaje-historia') {
+    // Sección especial para videos de TikTok del proyecto redes-sociales
+    if (project.id === 'redes-sociales') {
+        content += `
+            <div class="project-section">
+                <h3 class="font-bold text-2xl mb-4 text-[#073B4C]">Videos de TikTok - CarpaLovers</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    ${project.videos.map((video, index) => {
+                        // Extraer el ID del video de TikTok
+                        const tiktokId = video.url.split('/').pop();
+                        return `
+                        <div class="flex flex-col items-center">
+                            <div class="w-full flex justify-center">
+                                <iframe width="360" height="640" src="https://www.tiktok.com/embed/${tiktokId}" title="${video.title}" frameborder="0" allowfullscreen class="rounded-lg shadow-lg" style="max-width:100%; aspect-ratio:9/16;"></iframe>
+                            </div>
+                            <div class="mt-3 w-full">
+                                <h4 class="font-bold text-sm mb-1 text-[#073B4C] line-clamp-1">${video.title}</h4>
+                                <p class="text-xs text-gray-600 mb-2 line-clamp-2">${video.description}</p>
+                                <div class="flex flex-wrap gap-2 justify-center mb-2">
+                                    <span class="inline-flex items-center px-2 py-1 bg-pink-100 text-pink-600 rounded text-xs font-bold">
+                                        <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20"><path d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"/></svg>
+                                        ${video.metrics.likes}
+                                    </span>
+                                    <span class="inline-flex items-center px-2 py-1 bg-blue-100 text-blue-600 rounded text-xs font-bold">
+                                        <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z" clip-rule="evenodd"/></svg>
+                                        ${video.metrics.comments}
+                                    </span>
+                                    <span class="inline-flex items-center px-2 py-1 bg-yellow-100 text-yellow-600 rounded text-xs font-bold">
+                                        <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20"><path d="M15 8a3 3 0 10-2.977-2.63l-4.94 2.47a3 3 0 100 4.319l4.94 2.47a3 3 0 10.895-1.789l-4.94-2.47a3.027 3.027 0 000-.74l4.94-2.47C13.456 7.68 14.19 8 15 8z"/></svg>
+                                        ${video.metrics.shares}
+                                    </span>
+                                </div>
+                                <div class="bg-black/60 backdrop-blur-sm rounded px-2 py-1 text-white text-xs font-medium text-center">
+                                    ${video.metrics.views} visualizaciones
+                                </div>
+                                <a href="${video.url}" target="_blank" rel="noopener noreferrer" class="mt-2 w-full inline-flex items-center justify-center px-3 py-2 bg-gradient-to-r from-gray-900 to-gray-700 hover:from-gray-800 hover:to-gray-600 text-white font-medium rounded-lg transition-all duration-300 text-xs">
+                                    <svg class="w-4 h-4 mr-1" viewBox="0 0 24 24" fill="currentColor"><path d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.445v13.672a2.896 2.896 0 0 1-5.201 1.743l-.002-.001.002.001a2.895 2.895 0 0 1 3.183-4.51v-3.5a6.329 6.329 0 0 0-1.032-.084C5.894 9.321 2.8 12.408 2.8 16.274c0 3.866 3.094 6.953 6.959 6.953a6.96 6.96 0 0 0 5.66-2.756l.057-.069c1.021-1.297 1.638-2.942 1.638-4.738V9.67a8.384 8.384 0 0 0 4.7 1.474V7.79a4.797 4.797 0 0 1-1.225-.104z"/></svg>
+                                    Ver en TikTok
+                                </a>
+                            </div>
+                        </div>
+                        `;
+                    }).join('')}
+                </div>
+                
+                <!-- Botón para ver perfil completo de TikTok -->
+                <div class="mt-8 text-center">
+                    <a href="https://www.tiktok.com/@carpalovers" target="_blank" rel="noopener noreferrer" 
+                       class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-black via-gray-900 to-black hover:from-gray-800 hover:via-gray-700 hover:to-gray-800 text-white font-bold rounded-xl transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl border border-gray-700">
+                        <svg class="w-6 h-6 mr-3" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.445v13.672a2.896 2.896 0 0 1-5.201 1.743l-.002-.001.002.001a2.895 2.895 0 0 1 3.183-4.51v-3.5a6.329 6.329 0 0 0-1.032-.084C5.894 9.321 2.8 12.408 2.8 16.274c0 3.866 3.094 6.953 6.959 6.953a6.96 6.96 0 0 0 5.66-2.756l.057-.069c1.021-1.297 1.638-2.942 1.638-4.738V9.67a8.384 8.384 0 0 0 4.7 1.474V7.79a4.797 4.797 0 0 1-1.225-.104z"/>
+                        </svg>
+                        <span class="text-lg">Ver perfil completo @carpalovers</span>
+                        <svg class="w-5 h-5 ml-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                        </svg>
+                    </a>
+                    <p class="text-sm text-gray-600 mt-3 italic">Descubre más contenido y síguenos para ver las últimas creaciones</p>
+                </div>
+            </div>
+        `;
+    }
+
+    // Solo mostrar las siguientes secciones si NO es video-editing-1 NI montaje-historia NI redes-sociales
+    if (project.id !== 'video-editing-1' && project.id !== 'montaje-historia' && project.id !== 'redes-sociales') {
         if (project.logosUrl || project.layoutsUrl || project.userFlowUrl) {
             const imageUrl = project.logosUrl || project.layoutsUrl || project.userFlowUrl;
             const title = project.logosUrl ? 'Diseño de branding para redes sociales' : 
