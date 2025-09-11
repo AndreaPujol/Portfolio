@@ -179,7 +179,7 @@ const projectData = [
             'Adaptación de formato: horizontal para YouTube, vertical para Reels.',
             'Exportación y publicación en ambas plataformas.'
         ],
-        tools: ['Adobe Premiere', 'CapCut Pro', 'Canva'],
+        tools: ['Adobe Premiere', 'CapCut', 'Canva'],
         duration: '2 semanas',
         team: 'Proyecto individual - Rol: Edición, montaje, publicación',
         results: [
@@ -223,6 +223,45 @@ const projectData = [
             secondary: 'Roboto',
             description: 'Tipografías modernas y legibles para contenido audiovisual.'
         }
+    },
+    {
+        id: 'edicion-Milbrand',
+        category: 'Edición de video',
+        title: 'Edición redes Milbrand',
+        subtitle: 'Edición audiovisual adaptada a YouTube',
+        imageUrl: 'proyectos/Edicion-milbrand/imagenes/portada.jpg',
+        intro: 'Edición profesional de capacitación, adaptando el contenido para formato: YouTube. Se trabajó en la narrativa visual, el ritmo y la optimización para el formato solicitado.',
+        challenge: 'Transformar una capacitación en un contenido audiovisual atractivo para rede social de YouTube, manteniendo la esencia y el interés del público.',
+        solution: 'Se realizó un montaje dinámico, con cortes precisos, subtítulos, gráficos. Se optimizó el audio y se mejoró la presentación visual.',
+        process: [
+            'Selección de fragmentos clave de la capacitación.',
+            'Edición de video y audio para mejorar la calidad y el ritmo.',
+            'Creación de subtítulos y gráficos informativos.',
+            'Adaptación de formato: horizontal para YouTube.',
+            'Exportación y publicación en YouTube.'
+        ],
+        tools: ['Adobe Premiere', 'CapCut'],
+        duration: '2 días',
+        team: 'Proyecto individual - Rol: Edición, montaje, publicación',
+        results: [
+            'Mayor alcance en redes sociales',
+            'Engagement positivo en ambas plataformas',
+            'Optimización de formatos para cada audiencia'
+        ],
+        videos: [
+            {
+                title: 'Capacitación editada para YouTube',
+                url: 'https://youtu.be/hVpf-3QlQxc',
+                description: 'Versión completa y editada para YouTube, con formato horizontal.',
+                thumbnail: 'proyectos/Edicion-milbrand/imagenes/portada.jpg',
+                metrics: {
+                    views: '2.1K+',
+                    likes: '120+',
+                    shares: '15+',
+                    comments: '8+'
+                }
+            }
+        ],
     },
     {
         id: 'identidad-visual-1',
@@ -656,6 +695,57 @@ function generateModalContent(project) {
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                     ${project.videos.map((video, index) => {
                         // Extraer el ID del video de YouTube
+                        const youtubeId = extractYouTubeId(video.url);
+                        
+                        return `
+                        <div class="flex flex-col items-center bg-white rounded-lg shadow-lg overflow-hidden">
+                            <!-- Vista previa del video con thumbnail -->
+                            <div class="w-full h-64 relative bg-gray-100 flex items-center justify-center overflow-hidden">
+                                <img src="${video.thumbnail}" alt="${video.title}" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                <div class="absolute inset-0 bg-gray-200 hidden items-center justify-center">
+                                    <svg class="w-12 h-12 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                                    </svg>
+                                </div>
+                                <!-- Botón de play superpuesto -->
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <div class="bg-red-600 hover:bg-red-700 rounded-full p-4 transition-all duration-300 transform hover:scale-110 shadow-lg cursor-pointer" onclick="playYouTubeVideo(this, '${youtubeId}', '${video.title.replace(/'/g, "\\'")}')">
+                                        <svg class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M8 5v14l11-7z"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Información del video -->
+                            <div class="p-6 w-full">
+                                <h4 class="font-bold text-lg mb-2 text-[#073B4C]">${video.title}</h4>
+                                <p class="text-sm text-gray-600 mb-4">${video.description}</p>
+                                
+                                <!-- Botón para ver en YouTube -->
+                                <a href="${video.url}" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center px-4 py-3 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-bold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+                                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                                    </svg>
+                                    Ver en YouTube
+                                </a>
+                            </div>
+                        </div>
+                        `;
+                    }).join('')}
+                </div>
+            </div>
+        `;
+    }
+
+    // Sección especial para videos de YouTube del proyecto edicion-Milbrand
+    if (project.id === 'edicion-Milbrand') {
+        content += `
+            <div class="project-section">
+                <h3 class="font-bold text-2xl mb-4 text-[#073B4C]">Videos de la Capacitación - Milbrand</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    ${project.videos.map((video, index) => {
+                        // Extraer el ID del video de YouTube
                         const youtubeId = video.url.split('/').pop().split('?')[0];
                         
                         return `
@@ -699,8 +789,8 @@ function generateModalContent(project) {
         `;
     }
 
-    // Solo mostrar las siguientes secciones si NO es video-editing-1 NI montaje-historia NI redes-sociales NI edicion-entrevista-radio-argentina
-    if (project.id !== 'video-editing-1' && project.id !== 'montaje-historia' && project.id !== 'redes-sociales' && project.id !== 'edicion-entrevista-radio-argentina') {
+    // Solo mostrar las siguientes secciones si NO es video-editing-1 NI montaje-historia NI redes-sociales NI edicion-entrevista-radio-argentina NI edicion-Milbrand
+    if (project.id !== 'video-editing-1' && project.id !== 'montaje-historia' && project.id !== 'redes-sociales' && project.id !== 'edicion-entrevista-radio-argentina' && project.id !== 'edicion-Milbrand') {
         if (project.logosUrl || project.layoutsUrl || project.userFlowUrl) {
             const imageUrl = project.logosUrl || project.layoutsUrl || project.userFlowUrl;
             const title = project.logosUrl ? 'Diseño de branding para redes sociales' : 
@@ -1442,6 +1532,13 @@ function openCVFullscreen() {
         link.click();
         document.body.removeChild(link);
     }
+}
+
+// Función para extraer ID de YouTube de diferentes formatos de URL
+function extractYouTubeId(url) {
+    const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+    const match = url.match(regExp);
+    return (match && match[2].length === 11) ? match[2] : null;
 }
 
 // Función para reproducir videos de YouTube
