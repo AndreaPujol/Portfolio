@@ -1,5 +1,44 @@
 // Datos detallados de proyectos de Andrea Pujol
 const projectData = [
+    {
+        id: 'edicion-Milbrand',
+        category: 'Edición de video',
+        title: 'Edición redes Milbrand',
+        subtitle: 'Edición audiovisual adaptada a YouTube',
+        imageUrl: 'proyectos/Edicion-milbrand/imagenes/portada.jpg',
+        intro: 'Edición profesional de capacitación, adaptando el contenido para formato: YouTube. Se trabajó en la narrativa visual, el ritmo y la optimización para el formato solicitado.',
+        challenge: 'Transformar una capacitación en un contenido audiovisual atractivo para rede social de YouTube, manteniendo la esencia y el interés del público.',
+        solution: 'Se realizó un montaje dinámico, con cortes precisos, subtítulos, gráficos. Se optimizó el audio y se mejoró la presentación visual.',
+        process: [
+            'Selección de fragmentos clave de la capacitación.',
+            'Edición de video y audio para mejorar la calidad y el ritmo.',
+            'Creación de subtítulos y gráficos informativos.',
+            'Adaptación de formato: horizontal para YouTube.',
+            'Exportación y publicación en YouTube.'
+        ],
+        tools: ['Adobe Premiere', 'CapCut'],
+        duration: '2 días',
+        team: 'Proyecto individual - Rol: Edición, montaje, publicación',
+        results: [
+            'Mayor alcance en redes sociales',
+            'Engagement positivo en ambas plataformas',
+            'Optimización de formatos para cada audiencia'
+        ],
+        videos: [
+            {
+                title: 'Capacitación editada para YouTube',
+                url: 'https://youtu.be/hVpf-3QlQxc',
+                description: 'Versión completa y editada para YouTube, con formato horizontal.',
+                thumbnail: 'proyectos/Edicion-milbrand/imagenes/portada.jpg',
+                metrics: {
+                    views: '2.1K+',
+                    likes: '120+',
+                    shares: '15+',
+                    comments: '8+'
+                }
+            }
+        ],
+    },
      {
         id: 'montaje-historia',
         category: 'Edición de video',
@@ -223,46 +262,7 @@ const projectData = [
             secondary: 'Roboto',
             description: 'Tipografías modernas y legibles para contenido audiovisual.'
         }
-    },
-    {
-        id: 'edicion-Milbrand',
-        category: 'Edición de video',
-        title: 'Edición redes Milbrand',
-        subtitle: 'Edición audiovisual adaptada a YouTube',
-        imageUrl: 'proyectos/Edicion-milbrand/imagenes/portada.jpg',
-        intro: 'Edición profesional de capacitación, adaptando el contenido para formato: YouTube. Se trabajó en la narrativa visual, el ritmo y la optimización para el formato solicitado.',
-        challenge: 'Transformar una capacitación en un contenido audiovisual atractivo para rede social de YouTube, manteniendo la esencia y el interés del público.',
-        solution: 'Se realizó un montaje dinámico, con cortes precisos, subtítulos, gráficos. Se optimizó el audio y se mejoró la presentación visual.',
-        process: [
-            'Selección de fragmentos clave de la capacitación.',
-            'Edición de video y audio para mejorar la calidad y el ritmo.',
-            'Creación de subtítulos y gráficos informativos.',
-            'Adaptación de formato: horizontal para YouTube.',
-            'Exportación y publicación en YouTube.'
-        ],
-        tools: ['Adobe Premiere', 'CapCut'],
-        duration: '2 días',
-        team: 'Proyecto individual - Rol: Edición, montaje, publicación',
-        results: [
-            'Mayor alcance en redes sociales',
-            'Engagement positivo en ambas plataformas',
-            'Optimización de formatos para cada audiencia'
-        ],
-        videos: [
-            {
-                title: 'Capacitación editada para YouTube',
-                url: 'https://youtu.be/hVpf-3QlQxc',
-                description: 'Versión completa y editada para YouTube, con formato horizontal.',
-                thumbnail: 'proyectos/Edicion-milbrand/imagenes/portada.jpg',
-                metrics: {
-                    views: '2.1K+',
-                    likes: '120+',
-                    shares: '15+',
-                    comments: '8+'
-                }
-            }
-        ],
-    },
+    },    
     {
         id: 'identidad-visual-1',
         category: 'Identidad Visual',
