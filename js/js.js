@@ -969,27 +969,361 @@ function createColorChart(project) {
     });
 }
 
-// Animaciones de scroll
+// ========== EFECTOS PREMIUM CON PHYSICS - OPCIÓN C ==========
 function initializeScrollAnimations() {
+    console.log('🚀 Inicializando efectos premium con physics...');
+    
+    // Inicializar todos los sistemas de efectos
+    initializeCustomCursor();
+    initializeMagneticEffects();
+    initializeRevealAnimations();
+    initializeParticleSystem();
+    initializePhysicsEffects();
+    initializeStaggerAnimations();
+    initializeMorphingShapes();
+    initializeCounterAnimations();
+    initializeSkillBars();
+}
+
+// ========== CURSOR PERSONALIZADO ==========
+function initializeCustomCursor() {
+    // Solo en desktop
+    if (window.innerWidth <= 768) return;
+    
+    // Crear cursor personalizado
+    const cursor = document.createElement('div');
+    cursor.className = 'custom-cursor';
+    document.body.appendChild(cursor);
+    
+    // Crear trail del cursor
+    const cursorTrail = document.createElement('div');
+    cursorTrail.className = 'custom-cursor-trail';
+    document.body.appendChild(cursorTrail);
+    
+    let mouseX = 0, mouseY = 0;
+    let trailX = 0, trailY = 0;
+    
+    // Seguir mouse
+    document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        
+        cursor.style.left = mouseX + 'px';
+        cursor.style.top = mouseY + 'px';
+    });
+    
+    // Animar trail con retraso
+    function animateTrail() {
+        trailX += (mouseX - trailX) * 0.1;
+        trailY += (mouseY - trailY) * 0.1;
+        
+        cursorTrail.style.left = trailX + 'px';
+        cursorTrail.style.top = trailY + 'px';
+        
+        requestAnimationFrame(animateTrail);
+    }
+    animateTrail();
+    
+    // Efectos hover
+    const hoverElements = document.querySelectorAll('a, button, .card, .magnetic-element');
+    hoverElements.forEach(element => {
+        element.addEventListener('mouseenter', () => {
+            cursor.classList.add('hover');
+        });
+        
+        element.addEventListener('mouseleave', () => {
+            cursor.classList.remove('hover');
+        });
+    });
+}
+
+// ========== SISTEMA DE EFECTOS MAGNÉTICOS ==========
+function initializeMagneticEffects() {
+    const magneticElements = document.querySelectorAll('.magnetic-element, .card, .elastic-button, a[href^="#"]');
+    
+    magneticElements.forEach(element => {
+        // Evitar duplicar event listeners
+        if (element.hasAttribute('data-magnetic-initialized')) return;
+        element.setAttribute('data-magnetic-initialized', 'true');
+        
+        element.addEventListener('mouseenter', (e) => {
+            if (window.innerWidth > 768) { // Solo en desktop
+                e.target.classList.add('magnetic-active');
+            }
+        });
+        
+        element.addEventListener('mouseleave', (e) => {
+            e.target.classList.remove('magnetic-active');
+        });
+        
+        element.addEventListener('mousemove', (e) => {
+            if (window.innerWidth > 768) {
+                const rect = e.target.getBoundingClientRect();
+                const centerX = rect.left + rect.width / 2;
+                const centerY = rect.top + rect.height / 2;
+                
+                const deltaX = (e.clientX - centerX) * 0.1;
+                const deltaY = (e.clientY - centerY) * 0.1;
+                
+                e.target.style.transform = `translate(${deltaX}px, ${deltaY}px) scale(1.02)`;
+            }
+        });
+        
+        element.addEventListener('mouseleave', (e) => {
+            e.target.style.transform = '';
+        });
+    });
+}
+
+// ========== SISTEMA DE ANIMACIONES DE REVELADO ==========
+function initializeRevealAnimations() {
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
     };
-
-    const observer = new IntersectionObserver((entries) => {
+    
+    const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
+                const element = entry.target;
+                
+                // Aplicar diferentes tipos de revelado según la clase
+                if (element.classList.contains('slide-in-left')) {
+                    setTimeout(() => element.classList.add('revealed'), 100);
+                } else if (element.classList.contains('slide-in-right')) {
+                    setTimeout(() => element.classList.add('revealed'), 100);
+                } else {
+                    element.classList.add('revealed');
+                }
+                
+                // Agregar efecto de rebote
+                setTimeout(() => {
+                    element.classList.add('physics-bounce');
+                }, 200);
+                
+                revealObserver.unobserve(element);
             }
         });
     }, observerOptions);
-
-    // Observar secciones para animaciones
-    document.querySelectorAll('section').forEach(section => {
-        section.classList.add('section-fade-in');
-        observer.observe(section);
+    
+    // Observar elementos para revelar
+    const elementsToReveal = document.querySelectorAll(`
+        section h2,
+        section h3,
+        .card,
+        .skill-bar,
+        .stat-card,
+        .education-card
+    `);
+    
+    elementsToReveal.forEach((element, index) => {
+        element.classList.add('reveal-element');
+        
+        // Alternar direcciones para efecto dinámico
+        if (index % 3 === 1) {
+            element.classList.add('slide-in-left');
+        } else if (index % 3 === 2) {
+            element.classList.add('slide-in-right');
+        }
+        
+        revealObserver.observe(element);
     });
 }
+
+// ========== SISTEMA DE PARTÍCULAS ==========
+function initializeParticleSystem() {
+    const heroSection = document.querySelector('#hero');
+    if (!heroSection) return;
+    
+    // Crear contenedor de partículas
+    const particleContainer = document.createElement('div');
+    particleContainer.className = 'particle-container';
+    heroSection.appendChild(particleContainer);
+    
+    function createParticle() {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        
+        // Posición aleatoria
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.animationDelay = Math.random() * 6 + 's';
+        particle.style.animationDuration = (6 + Math.random() * 4) + 's';
+        
+        // Color aleatorio de la paleta
+        const colors = ['var(--color-primary)', 'var(--color-secondary)', 'var(--color-support-yellow)'];
+        particle.style.background = colors[Math.floor(Math.random() * colors.length)];
+        
+        particleContainer.appendChild(particle);
+        
+        // Eliminar partícula después de la animación
+        setTimeout(() => {
+            if (particle.parentNode) {
+                particle.parentNode.removeChild(particle);
+            }
+        }, 10000);
+    }
+    
+    // Crear partículas periódicamente
+    setInterval(createParticle, 3000);
+    
+    // Crear algunas partículas iniciales
+    for (let i = 0; i < 3; i++) {
+        setTimeout(createParticle, i * 1000);
+    }
+}
+
+// ========== EFECTOS DE FÍSICA ==========
+function initializePhysicsEffects() {
+    // Aplicar clases de efectos premium a elementos existentes
+    document.querySelectorAll('.card').forEach(card => {
+        card.classList.add('premium-card', 'physics-element');
+    });
+    
+    document.querySelectorAll('a[href^="#"], button').forEach(button => {
+        button.classList.add('elastic-button', 'liquid-button');
+    });
+    
+    // Elementos flotantes
+    document.querySelectorAll('.hero-section > div > div').forEach(element => {
+        if (element.classList.contains('absolute')) {
+            element.classList.add('floating-element');
+        }
+    });
+}
+
+// ========== ANIMACIONES STAGGER ==========
+function initializeStaggerAnimations() {
+    const staggerObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const children = entry.target.children;
+                Array.from(children).forEach((child, index) => {
+                    child.classList.add('stagger-item');
+                    setTimeout(() => {
+                        child.classList.add('animate');
+                    }, index * 100);
+                });
+                staggerObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.2 });
+    
+    // Aplicar a grillas y listas
+    document.querySelectorAll('.grid, .space-y-6, .space-y-8').forEach(container => {
+        staggerObserver.observe(container);
+    });
+}
+
+// ========== FORMAS MORPHING ==========
+function initializeMorphingShapes() {
+    // Agregar formas morphing a elementos decorativos existentes
+    document.querySelectorAll('.hero-section .absolute').forEach(element => {
+        if (element.classList.contains('rounded-full')) {
+            element.classList.add('morphing-shape');
+        }
+    });
+}
+
+// ========== CONTADORES ANIMADOS ==========
+function initializeCounterAnimations() {
+    const counterObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const counter = entry.target;
+                const target = parseInt(counter.textContent.replace(/\D/g, '')) || 100;
+                const suffix = counter.textContent.replace(/[\d\s]/g, '');
+                
+                let current = 0;
+                const increment = target / 60; // 60 frames para 1 segundo
+                
+                const updateCounter = () => {
+                    current += increment;
+                    if (current < target) {
+                        counter.textContent = Math.ceil(current) + suffix;
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.textContent = target + suffix;
+                    }
+                };
+                
+                // Pequeño delay para efecto dramático
+                setTimeout(updateCounter, 200);
+                
+                counterObserver.unobserve(counter);
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    // Observar números de estadísticas
+    document.querySelectorAll('.stat-number').forEach(counter => {
+        counterObserver.observe(counter);
+    });
+}
+
+// ========== BARRAS DE HABILIDADES ANIMADAS ==========
+function initializeSkillBars() {
+    const skillObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const skillBar = entry.target;
+                
+                // Animar con delay progresivo
+                setTimeout(() => {
+                    skillBar.classList.add('animate');
+                }, 300);
+                
+                skillObserver.unobserve(skillBar);
+            }
+        });
+    }, { threshold: 0.3 });
+    
+    // Observar todas las barras de habilidades
+    document.querySelectorAll('.skill-bar').forEach(skillBar => {
+        skillObserver.observe(skillBar);
+    });
+}
+
+// ========== OPTIMIZACIÓN DE PERFORMANCE ==========
+function optimizePerformance() {
+    // Pausar animaciones cuando no están visibles
+    let isVisible = true;
+    
+    document.addEventListener('visibilitychange', () => {
+        isVisible = !document.hidden;
+        
+        const animatedElements = document.querySelectorAll('.morphing-shape, .floating-element, .particle');
+        animatedElements.forEach(element => {
+            if (isVisible) {
+                element.style.animationPlayState = 'running';
+            } else {
+                element.style.animationPlayState = 'paused';
+            }
+        });
+    });
+    
+    // Reducir efectos en dispositivos móviles para mejor performance
+    if (window.innerWidth <= 768) {
+        document.querySelectorAll('.particle').forEach(particle => {
+            particle.style.display = 'none';
+        });
+    }
+}
+
+// ========== INICIALIZACIÓN MEJORADA ==========
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('🎨 Cargando efectos premium...');
+    
+    // Verificar soporte para efectos avanzados
+    if (!window.IntersectionObserver) {
+        console.warn('IntersectionObserver no soportado, efectos limitados');
+        return;
+    }
+    
+    // Inicializar sistemas adicionales
+    setTimeout(optimizePerformance, 500);
+    
+    console.log('✨ Efectos premium cargados exitosamente!');
+});
 
 // Navegación suave y menú móvil
 function initializeNavigation() {

@@ -29,6 +29,11 @@
     --gradient-primary: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
     --gradient-support: linear-gradient(135deg, var(--color-support-yellow), var(--color-support-pink));
     --gradient-full: linear-gradient(135deg, var(--color-primary), var(--color-secondary), var(--color-support-yellow));
+    
+    /* Variables para efectos premium */
+    --elastic-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --smooth-ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --physics-ease: cubic-bezier(0.17, 0.67, 0.83, 0.67);
 }
 
 /* Estilos base */
@@ -37,6 +42,54 @@ body {
     background-color: var(--background-light);
     color: var(--primary-dark);
     line-height: 1.6;
+    cursor: none; /* Ocultar cursor por defecto para usar cursor personalizado */
+}
+
+/* ========== CURSOR PERSONALIZADO PREMIUM ========== */
+.custom-cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    background: var(--gradient-primary);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: all 0.1s ease;
+    mix-blend-mode: difference;
+    opacity: 0.8;
+}
+
+.custom-cursor.hover {
+    width: 40px;
+    height: 40px;
+    background: var(--gradient-support);
+    opacity: 0.6;
+}
+
+.custom-cursor-trail {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    background: var(--color-primary);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease;
+    opacity: 0.4;
+}
+
+/* Restaurar cursor en elementos interactivos para móvil */
+@media (max-width: 768px) {
+    body {
+        cursor: auto;
+    }
+    
+    .custom-cursor,
+    .custom-cursor-trail {
+        display: none;
+    }
 }
 
 .font-display {
@@ -182,17 +235,8 @@ section[id] {
     overscroll-behavior: contain;
 }
 
-/* Animaciones para las secciones */
-.section-fade-in {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.6s ease;
-}
-
-.section-fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
+/* EFECTO ELIMINADO - Secciones sin animación de scroll */
+/* Las secciones aparecen normalmente sin efectos especiales */
 
 /* Efectos de hover para enlaces */
 .link-hover {
@@ -1215,5 +1259,279 @@ button.secondary:hover,
         overscroll-behavior: contain;
         /* Área completa de toque */
         touch-action: pan-y;
+    }
+}
+
+/* =================================================================
+   EFECTOS PREMIUM CON PHYSICS - OPCIÓN C
+   ================================================================= */
+
+/* ========== MAGNETIC CURSOR EFFECTS ========== */
+.magnetic-element {
+    transition: transform 0.3s var(--elastic-bounce);
+    will-change: transform;
+}
+
+.magnetic-element.magnetic-active {
+    transform: scale(1.05);
+}
+
+/* ========== MORPHING SHAPES ========== */
+@keyframes morphBlob {
+    0% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+    25% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+    50% { border-radius: 20% 80% 60% 40% / 40% 50% 70% 30%; }
+    75% { border-radius: 60% 20% 40% 80% / 70% 40% 50% 60%; }
+    100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+}
+
+.morphing-shape {
+    animation: morphBlob 8s ease-in-out infinite;
+    background: var(--gradient-primary);
+    filter: blur(1px);
+    opacity: 0.1;
+}
+
+/* ========== PHYSICS-BASED ANIMATIONS ========== */
+.physics-element {
+    transition: all 0.6s var(--physics-ease);
+    transform-origin: center;
+}
+
+.physics-bounce {
+    animation: physicsBounce 0.8s var(--elastic-bounce) forwards;
+}
+
+@keyframes physicsBounce {
+    0% { transform: scale(1) translateY(0); }
+    30% { transform: scale(1.05) translateY(-10px); }
+    60% { transform: scale(0.98) translateY(-5px); }
+    100% { transform: scale(1) translateY(0); }
+}
+
+/* ========== PARTICLE SYSTEM ========== */
+.particle-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: var(--color-primary);
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: floatParticle 6s ease-in-out infinite;
+}
+
+@keyframes floatParticle {
+    0% { 
+        transform: translateY(100vh) translateX(0) scale(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.6;
+        transform: scale(1);
+    }
+    90% {
+        opacity: 0.6;
+    }
+    100% { 
+        transform: translateY(-100px) translateX(50px) scale(0);
+        opacity: 0;
+    }
+}
+
+/* ========== ELASTIC INTERACTIONS ========== */
+.elastic-button {
+    transition: all 0.3s var(--elastic-bounce);
+    transform-style: preserve-3d;
+}
+
+.elastic-button:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.elastic-button:active {
+    transform: translateY(-1px) scale(0.98);
+    transition: all 0.1s ease-out;
+}
+
+/* ========== ADVANCED SCROLL TRIGGERS ========== */
+.reveal-element {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+    transition: all 0.8s var(--physics-ease);
+}
+
+.reveal-element.revealed {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.slide-in-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 0.7s var(--smooth-ease);
+}
+
+.slide-in-left.revealed {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.slide-in-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 0.7s var(--smooth-ease);
+}
+
+.slide-in-right.revealed {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* ========== ENHANCED CARD EFFECTS ========== */
+.premium-card {
+    transition: all 0.4s var(--elastic-bounce);
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.premium-card:hover {
+    transform: translateY(-8px) rotateX(5deg) rotateY(5deg);
+    box-shadow: 
+        0 20px 40px rgba(0,0,0,0.1),
+        0 0 0 1px rgba(255,255,255,0.2) inset;
+}
+
+/* ========== ANIMATED SKILL BARS ========== */
+.skill-bar .bg-gradient-primary {
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 1.5s var(--elastic-bounce);
+}
+
+.skill-bar.animate .bg-gradient-primary {
+    transform: scaleX(1);
+}
+
+.skill-bar {
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    transition: left 1.5s ease-in-out;
+}
+
+.skill-bar.animate::after {
+    left: 100%;
+}
+
+/* ========== LIQUID BUTTON EFFECT ========== */
+.liquid-button {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s var(--smooth-ease);
+}
+
+.liquid-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.6s var(--elastic-bounce);
+    z-index: 0;
+}
+
+.liquid-button:hover::before {
+    width: 300%;
+    height: 300%;
+}
+
+.liquid-button > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* ========== FLOATING ELEMENTS ========== */
+.floating-element {
+    animation: gentleFloat 6s ease-in-out infinite;
+}
+
+@keyframes gentleFloat {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    25% { transform: translateY(-10px) rotate(1deg); }
+    50% { transform: translateY(-5px) rotate(0deg); }
+    75% { transform: translateY(-15px) rotate(-1deg); }
+}
+
+/* ========== STAGGER ANIMATIONS ========== */
+.stagger-item {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s var(--physics-ease);
+}
+
+.stagger-item.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Delays para efecto stagger */
+.stagger-item:nth-child(1) { transition-delay: 0.1s; }
+.stagger-item:nth-child(2) { transition-delay: 0.2s; }
+.stagger-item:nth-child(3) { transition-delay: 0.3s; }
+.stagger-item:nth-child(4) { transition-delay: 0.4s; }
+.stagger-item:nth-child(5) { transition-delay: 0.5s; }
+.stagger-item:nth-child(6) { transition-delay: 0.6s; }
+
+/* ========== PERFORMANCE OPTIMIZATIONS ========== */
+.premium-effect {
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+/* ========== RESPONSIVE ADJUSTMENTS ========== */
+@media (prefers-reduced-motion: reduce) {
+    .morphing-shape,
+    .floating-element,
+    .particle {
+        animation: none !important;
+    }
+    
+    .physics-element,
+    .elastic-button,
+    .premium-card {
+        transition: none !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .premium-card:hover {
+        transform: translateY(-4px);
+    }
+    
+    .elastic-button:hover {
+        transform: translateY(-2px) scale(1.01);
     }
 }
