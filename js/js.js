@@ -983,6 +983,7 @@ function initializeScrollAnimations() {
     initializeMorphingShapes();
     initializeCounterAnimations();
     initializeSkillBars();
+    initializeFloatingWhatsApp();
 }
 
 // ========== CURSOR PERSONALIZADO ==========
@@ -1893,3 +1894,110 @@ function playYouTubeVideo(element, youtubeId, title) {
         </iframe>
     `;
 }
+
+// ========== BOTÓN WHATSAPP FLOTANTE ==========
+function initializeFloatingWhatsApp() {
+    console.log('🟢 Inicializando botón WhatsApp flotante...');
+    
+    const whatsappFloat = document.getElementById('whatsapp-float');
+    if (!whatsappFloat) {
+        console.warn('Elemento WhatsApp float no encontrado');
+        return;
+    }
+    
+    let isVisible = false;
+    let scrollTimeout;
+    
+    // Función para mostrar/ocultar el botón
+    function toggleWhatsAppButton() {
+        const scrollY = window.scrollY;
+        const windowHeight = window.innerHeight;
+        const documentHeight = document.documentElement.scrollHeight;
+        const scrollPercent = scrollY / (documentHeight - windowHeight);
+        
+        // Mostrar después de hacer scroll del 15% de la página
+        const shouldShow = scrollY > windowHeight * 0.15;
+        
+        if (shouldShow && !isVisible) {
+            isVisible = true;
+            whatsappFloat.classList.remove('hidden');
+            whatsappFloat.classList.add('show');
+            
+            // Agregar clases de efectos premium
+            whatsappFloat.querySelector('.whatsapp-button').classList.add('magnetic-element', 'elastic-button');
+            
+        } else if (!shouldShow && isVisible) {
+            isVisible = false;
+            whatsappFloat.classList.remove('show');
+            
+            // Ocultar después de la animación
+            setTimeout(() => {
+                if (!isVisible) {
+                    whatsappFloat.classList.add('hidden');
+                }
+            }, 400);
+        }
+    }
+    
+    // Optimizar el scroll con throttling
+    function handleScroll() {
+        if (scrollTimeout) {
+            clearTimeout(scrollTimeout);
+        }
+        
+        scrollTimeout = setTimeout(() => {
+            toggleWhatsAppButton();
+        }, 16); // ~60fps
+    }
+    
+    // Event listeners
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', toggleWhatsAppButton, { passive: true });
+    
+    // Check inicial
+    setTimeout(toggleWhatsAppButton, 100);
+    
+    // Agregar efectos de hover mejorados
+    const whatsappButton = whatsappFloat.querySelector('.whatsapp-button');
+    
+    // Efecto de vibración al hacer hover
+    whatsappButton.addEventListener('mouseenter', () => {
+        if (window.innerWidth > 768) {
+            whatsappButton.style.animation = 'none';
+            whatsappButton.offsetHeight; // trigger reflow
+            whatsappButton.style.animation = 'whatsappHover 0.5s ease-out';
+        }
+    });
+    
+    // Limpiar animación
+    whatsappButton.addEventListener('mouseleave', () => {
+        whatsappButton.style.animation = '';
+    });
+    
+    // Analíticas (opcional)
+    whatsappButton.addEventListener('click', () => {
+        console.log('🟢 Click en botón WhatsApp flotante');
+        
+        // Aquí puedes agregar Google Analytics o similar
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'click', {
+                'event_category': 'WhatsApp',
+                'event_label': 'Floating Button',
+                'transport_type': 'beacon'
+            });
+        }
+    });
+}
+
+// ========== ANIMACIÓN DE HOVER PARA WHATSAPP ==========
+// Agregar keyframes dinámicamente
+const styleSheet = document.createElement('style');
+styleSheet.textContent = `
+    @keyframes whatsappHover {
+        0%, 100% { transform: scale(1.1) translateY(-2px); }
+        25% { transform: scale(1.15) translateY(-3px) rotate(5deg); }
+        50% { transform: scale(1.12) translateY(-2px) rotate(0deg); }
+        75% { transform: scale(1.13) translateY(-2px) rotate(-3deg); }
+    }
+`;
+document.head.appendChild(styleSheet);
